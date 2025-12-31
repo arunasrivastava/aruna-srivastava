@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aruna | Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header>
+        <nav>
+            <div class="nav-signature">
+                <span class="by-text">from:</span>
+                <span class="signature-name">Aruna</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="content fade-in">
+                <h1 class="greeting"><span class="greeting-text" id="greetingText">Hi!</span> I'm Aruna,</h1>
+                <h2 class="tagline">I love exploring ;) </h2>
+                <p class="description">
+                    I believe that everything, from thoughtful AI research to random,
+                    thoughtless, mildly life threatening trips, should be documented and openly shared!
+                </p>
+                <p class="cta">
+                    Check out our amazing open-sourced research
+                    <a href="https://koellabs.com" target="_blank" rel="noopener noreferrer">@KoelLabs</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="photography" class="photography-section">
+            <div class="section-header">
+                <h2 class="section-title">Stories and Scenes...</h2>
+                <button class="shuffle-btn" id="shuffleBtn" aria-label="Shuffle photos">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 3 21 3 21 8"></polyline>
+                        <line x1="4" y1="20" x2="21" y2="3"></line>
+                        <polyline points="21 16 21 21 16 21"></polyline>
+                        <line x1="15" y1="15" x2="21" y2="21"></line>
+                        <line x1="4" y1="4" x2="9" y2="9"></line>
+                    </svg>
+                </button>
+            </div>
+            <h3 class="section-subtitle">A bit of my photography and the stories they capture...</h3>
+            <div class="photo-gallery">
+                <a href="blog/nara-japan.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Nara, Japan</span>
+                    </div>
+                    <img src="img/daikon.JPG" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/jioufen-taiwan.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Jioufen, Taiwan</span>
+                    </div>
+                    <img src="img/IMG_1751.JPG" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/taipei-taiwan.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Taipei City, Taiwan</span>
+                    </div>
+                    <img src="img/IMG_1727_Original.JPG" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/scottish-highlands.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Scottish Highlands, UK</span>
+                    </div>
+                    <img src="img/IMG_6499.jpg" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/tokyo-japan.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Tokyo, Japan</span>
+                    </div>
+                    <img src="img/IMG_7342.JPG" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/okinawa-japan.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Okinawa, Japan</span>
+                    </div>
+                    <img src="img/IMG_7433.jpg" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/delft-netherlands.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Delft, Netherlands</span>
+                    </div>
+                    <img src="img/IMG_6579.jpg" alt="Travel photo" loading="lazy">
+                </a>
+                <!-- <a href="blog/post8.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Yoshino, Japan</span>
+                    </div>
+                    <img src="img/IMG_7099.JPG" alt="Travel photo" loading="lazy">
+                </a> -->
+                <a href="blog/awaji-island-japan.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Awaji Island, Japan</span>
+                    </div>
+                    <img src="img/IMG_7010.jpg" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/rotterdam-netherlands.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Rotterdam, Netherlands</span>
+                    </div>
+                    <img src="img/IMG_6608.jpg" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/yoshino-japan.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Yoshino, Japan</span>
+                    </div>
+                    <img src="img/IMG_7101 2.jpg" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/uji-japan.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Uji, Japan</span>
+                    </div>
+                    <img src="img/IMG_7202.jpg" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/malacca-malaysia.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Malacca, Malaysia</span>
+                    </div>
+                    <img src="img/malacca (1).jpg" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/costa-rica.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">La Fortuna, Costa Rica</span>
+                    </div>
+                    <img src="img/costarica_leaf.jpg" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/reims-france.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Reims, France</span>
+                    </div>
+                    <img src="img/IMG_4043.JPG" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/paris-france.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Paris, France</span>
+                    </div>
+                    <img src="img/paris.JPG" alt="Travel photo" loading="lazy">
+                </a>
+                <a href="blog/kamakura-japan.html" class="photo-item">
+                    <div class="photo-pin">
+                        <span class="pin"></span>
+                        <span class="photo-location">Kamakura, Japan</span>
+                    </div>
+                    <img src="img/kamakura.jpg" alt="Travel photo" loading="lazy">
+                </a>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p class="footer-note">more to come! perhaps some publications will be put here ;)</p>
+        </footer>
+<!--
+        <section id="reading" class="reading-section">
+            <h2 class="section-title">Some Stuff I am Reading :)</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" aria-label="Previous paper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="papers-carousel">
+                    <div class="carousel-track">
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5042410" class="paper-card" target="_blank" rel="noopener noreferrer">
+                        <div class="paper-image">
+                            <img src="papers/paper1.png" alt="Algorithmic Language Management">
+                        </div>
+                        <div class="paper-info">
+                            <h3>Algorithmic Language Management</h3>
+                            <p>Nina Markl</p>
+                        </div>
+                    </a>
+                    <a href="https://dl.acm.org/doi/10.1145/3476058" class="paper-card" target="_blank" rel="noopener noreferrer">
+                        <div class="paper-image">
+                            <img src="papers/paper2.png" alt="Do Datasets Have Politics?">
+                        </div>
+                        <div class="paper-info">
+                            <h3>Do Datasets Have Politics?</h3>
+                            <p>Scheuerman, Hanna, Denton</p>
+                        </div>
+                    </a>
+                    <a href="https://aclanthology.org/2024.findings-acl.681.pdf" class="paper-card" target="_blank" rel="noopener noreferrer">
+                        <div class="paper-image">
+                            <img src="papers/paper3.png" alt="wav2vec-S: Adapting Pre-trained Speech Models for Streaming">
+                        </div>
+                        <div class="paper-info">
+                            <h3>wav2vec-S: Adapting Pre-trained Speech Models for Streaming</h3>
+                            <p>Fu et al.</p>
+                        </div>
+                    </a>
+                    <a href="https://arxiv.org/abs/2508.20869" class="paper-card" target="_blank" rel="noopener noreferrer">
+                        <div class="paper-image">
+                            <img src="papers/paper4.png" alt="OLMoASR">
+                        </div>
+                        <div class="paper-info">
+                            <h3>OLMoASR: Open Models and Data for Training Robust Speech Recognition</h3>
+                            <p>Ngo et al.</p>
+                        </div>
+                    </a>
+                    <a href="https://arxiv.org/pdf/2406.02009" class="paper-card" target="_blank" rel="noopener noreferrer">
+                        <div class="paper-image">
+                            <img src="papers/paper5.png" alt="Phonetic Enhanced Language Modeling">
+                        </div>
+                        <div class="paper-info">
+                            <h3>Phonetic Enhanced Language Modeling for TTS</h3>
+                            <p>Zhou et al.</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-next" aria-label="Next paper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </section> -->
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

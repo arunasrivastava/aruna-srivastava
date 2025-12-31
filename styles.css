@@ -1,0 +1,967 @@
+/* CSS Variables for theming */
+:root {
+    --bg-color: #faf9f6;
+    --text-color: #2c3e50;
+    --text-secondary: #5a6c7d;
+    --line-color: rgba(100, 149, 237, 0.25);
+    --line-color-strong: rgba(100, 149, 237, 0.4);
+    --accent-color: #74a1b1;
+    --accent-hover: #3a7bc8;
+    --nav-bg: rgba(250, 249, 246, 0.85);
+    --transition-speed: 0.4s;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0a0a0a;
+    --text-color: #f0f0f0;
+    --text-secondary: #b0b0b0;
+    --line-color: rgba(255, 255, 255, 0.08);
+    --line-color-strong: rgba(255, 255, 255, 0.15);
+    --accent-color: #5780a3;
+    --accent-hover: #8fc4f5;
+    --nav-bg: rgba(10, 10, 10, 0.85);
+}
+
+/* Reset and base styles */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Caveat', 'Patrick Hand', cursive;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease;
+    overflow-x: hidden;
+}
+
+/* Hand-drawn graph paper background */
+.graph-paper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.graph-paper::before,
+.graph-paper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Small grid lines - hand-drawn effect with slight imperfections */
+.graph-paper::before {
+    background-image:
+        /* Vertical lines with slight wobble effect */
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 24px,
+            var(--line-color) 24px,
+            var(--line-color) 25px
+        ),
+        /* Horizontal lines */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 24px,
+            var(--line-color) 24px,
+            var(--line-color) 25px
+        );
+    /* Add slight rotation for hand-drawn feel */
+    transform: rotate(-0.2deg);
+    opacity: 0.9;
+    transition: opacity var(--transition-speed) ease;
+}
+
+/* Larger grid lines for major divisions */
+.graph-paper::after {
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 99px,
+            var(--line-color-strong) 99px,
+            var(--line-color-strong) 101px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 99px,
+            var(--line-color-strong) 99px,
+            var(--line-color-strong) 101px
+        );
+    transform: rotate(0.1deg);
+    transition: opacity var(--transition-speed) ease;
+}
+
+/* Add subtle paper texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+}
+
+/* Header and Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.5rem 2rem;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background var(--transition-speed) ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-signature {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.by-text {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+}
+
+.signature-name {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    letter-spacing: 0.02em;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: rotate(15deg);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sun-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+.moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="dark"] .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="dark"] .moon-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+/* Main content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    padding-top: 4rem;
+}
+
+.content {
+    text-align: center;
+}
+
+/* Typography with fade-in animation */
+.greeting {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+    transition: color var(--transition-speed) ease;
+}
+
+.greeting-text {
+    display: inline;
+    font-family: 'Caveat', 'Zen Kurenaido', 'ZCOOL XiaoWei', 'Nanum Pen Script', cursive;
+}
+
+.greeting-text::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.8s infinite;
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 0.7; }
+    51%, 100% { opacity: 0; }
+}
+
+.tagline {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 500;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    transition: color var(--transition-speed) ease;
+}
+
+.description {
+    font-family: 'Patrick Hand', cursive;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: color var(--transition-speed) ease;
+}
+
+.cta {
+    font-family: 'Patrick Hand', cursive;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    line-height: 1.6;
+    transition: color var(--transition-speed) ease;
+}
+
+.cta a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.cta a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.cta a:hover {
+    color: var(--accent-hover);
+}
+
+.cta a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in .greeting {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.fade-in .tagline {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.fade-in .description {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.fade-in .cta {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hand-drawn decorative elements */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--line-color-strong);
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    transform: rotate(15deg);
+    opacity: 0.5;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--line-color-strong);
+    bottom: 20%;
+    right: 15%;
+    transform: rotate(-10deg);
+    opacity: 0.5;
+}
+
+/* Reading Section */
+.reading-section {
+    width: 100%;
+    padding: 6rem 0 4rem;
+    margin-top: 2rem;
+}
+
+.section-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease;
+}
+
+.section-subtitle {
+    font-family: 'Patrick Hand', cursive;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    transition: color var(--transition-speed) ease;
+}
+
+/* Carousel Container */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.carousel-btn {
+    background: var(--bg-color);
+    border: 2px solid var(--line-color-strong);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.carousel-btn:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 4px;
+}
+
+.carousel-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.papers-carousel {
+    overflow: hidden;
+    width: 100%;
+    max-width: 750px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.4s ease;
+    padding: 1.5rem 0;
+}
+
+.paper-card {
+    flex-shrink: 0;
+    width: 220px;
+    text-decoration: none;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: 2px solid var(--line-color-strong);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 1;
+}
+
+.paper-card.active {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 16px rgba(70, 130, 180, 0.2);
+}
+
+[data-theme="dark"] .paper-card.active {
+    box-shadow: 0 0 16px rgba(70, 130, 180, 0.3);
+}
+
+.paper-card:hover {
+    border-color: var(--accent-color);
+}
+
+.paper-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: var(--line-color);
+}
+
+.paper-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.3s ease;
+}
+
+.paper-card:hover .paper-image img {
+    transform: scale(1.03);
+}
+
+.paper-info {
+    padding: 1rem;
+}
+
+.paper-info h3 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease;
+}
+
+.paper-info p {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: color var(--transition-speed) ease;
+}
+
+.paper-card:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 4px;
+}
+
+/* Photography Section */
+.photography-section {
+    width: 100%;
+    padding: 4rem 2rem 6rem;
+    position: relative;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.shuffle-btn {
+    position: relative;
+    background: var(--bg-color);
+    border: 1.5px solid var(--line-color-strong);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: opacity 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    opacity: 0.7;
+    margin-left: 0.75rem;
+    animation: shuffleBtnFloat 3s ease-in-out infinite;
+}
+
+@keyframes shuffleBtnFloat {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    20% {
+        transform: translateX(-8px) translateY(-6px);
+    }
+    40% {
+        transform: translateX(5px) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-6px) translateY(4px);
+    }
+    80% {
+        transform: translateX(8px) translateY(-3px);
+    }
+}
+
+.shuffle-btn:hover {
+    opacity: 1;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    animation-play-state: paused;
+}
+
+.shuffle-btn:active {
+    transform: scale(0.9);
+}
+
+.shuffle-btn:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 4px;
+}
+
+.shuffle-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Photo shuffle animation */
+.photo-item.shuffling {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+}
+
+.photo-gallery.is-shuffling {
+    pointer-events: none;
+}
+
+.photo-gallery {
+    columns: 3;
+    column-gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.photo-item {
+    display: block;
+    break-inside: avoid;
+    margin-bottom: 2.5rem;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.photo-pin {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding-left: 0.25rem;
+}
+
+.pin {
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.pin::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 6px;
+    background: linear-gradient(to bottom, #ffffff, #cccccc);
+    border-radius: 1px;
+}
+
+[data-theme="dark"] .pin {
+    background: #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .pin::after {
+    background: linear-gradient(to bottom, #e0e0e0, #999999);
+}
+
+.photo-location {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .photo-item img {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.photo-item:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .photo-item:hover img {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.photo-item::after {
+    content: 'read story';
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 0.9rem;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.photo-item:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.photo-item:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 4px;
+}
+
+/* Featured Section */
+.featured-section {
+    width: 100%;
+    max-width: 700px;
+    padding: 4rem 2rem;
+}
+
+.featured-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.featured-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: 2px solid var(--line-color-strong);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.featured-link:hover {
+    border-color: var(--accent-color);
+    transform: translateX(8px);
+    box-shadow: -4px 4px 0 var(--accent-color);
+}
+
+.link-source {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.link-title {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.15rem;
+    flex: 1;
+    line-height: 1.3;
+}
+
+.link-arrow {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.featured-link:hover .link-arrow {
+    transform: translateX(4px);
+}
+
+.featured-link:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    .by-text {
+        font-size: 1rem;
+    }
+
+    .signature-name {
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        padding-top: 3rem;
+    }
+
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-container {
+        gap: 0.75rem;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .carousel-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .papers-carousel {
+        max-width: 550px;
+    }
+
+    .carousel-track {
+        gap: 1rem;
+    }
+
+    .paper-card {
+        width: 160px;
+    }
+
+    .paper-image {
+        height: 130px;
+    }
+
+    .photo-gallery {
+        columns: 2;
+        column-gap: 1.5rem;
+    }
+
+    .photo-item {
+        margin-bottom: 2rem;
+    }
+
+    .featured-link {
+        flex-wrap: wrap;
+    }
+
+    .link-title {
+        order: 3;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .link-arrow {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .by-text {
+        font-size: 0.95rem;
+    }
+
+    .signature-name {
+        font-size: 1.6rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .photo-gallery {
+        columns: 1;
+    }
+
+    .photography-section {
+        padding: 3rem 1rem 4rem;
+    }
+
+    .shuffle-btn {
+        width: 28px;
+        height: 28px;
+        margin-left: 0.5rem;
+    }
+
+    .shuffle-btn svg {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Site Footer */
+.site-footer {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+}
+
+.footer-note {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+}
+
+/* Smooth scrolling and selection */
+::selection {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Focus styles for accessibility */
+.theme-toggle:focus,
+.cta a:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 4px;
+}
+
+/* Scroll reveal animation for photos */
+.photo-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.photo-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .photo-item {
+        opacity: 1;
+        transform: none;
+    }
+}

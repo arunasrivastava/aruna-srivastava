@@ -1,0 +1,19 @@
+Algorithmic Language Management:
+How do language technologies affect linguistic
+practices and beliefs?
+Nina Markl
+University of Essex
+nina.markl@essex.ac.uk
+
+Do Datasets Have Politics? Disciplinary Values in
+Computer Vision Dataset Development
+MORGAN KLAUS SCHEUERMAN, University of Colorado Boulder,
+Boulder, CO, United States.
+ALEX HANNA, Google LLC, Mountain View, CA, United States.
+REMI DENTON, Google LLC, Mountain View, CA, United States.
+
+EVALUATING BIAS IN SPOKEN DIALOGUE LLMS
+FOR REAL-WORLD DECISIONS AND RECOMMENDATIONS
+Yihao Wu1, Tianrui Wang1, Yizhou Peng1, Yi-Wen Chao1, Xuyi Zhuang1,
+Xinsheng Wang2, Shunshun Yin2, Ziyang Ma1†
+1Nanyang Technological University, Singapore 2Soul AI Lab, China

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scottish Highlands | Aruna's Stories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header class="blog-header">
+        <nav>
+            <a href="../index.html#photography" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to gallery
+            </a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="blog-main">
+        <article class="story-article">
+            <div class="story-gallery">
+                <div class="story-gallery-images">
+                    <img src="../img/IMG_6499.jpg" alt="Scottish Highlands" class="active">
+                    <img src="../img/scottish-highlands-2.jpg" alt="Scottish Highlands" loading="lazy">
+                </div>
+                <button class="story-gallery-next" aria-label="Next image">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+                <div class="story-gallery-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="story-content">
+                <div class="story-location">
+                    <span class="pin"></span>
+                    <h1>Scottish Highlands</h1>
+                </div>
+                <p class="story-text">
+                    Scottish Highlands are like balls of broccoli. Fuzzy green mountains. 
+                <p class="story-text">
+                    The city center of Scotland, Edinburgh, was a bit boring by day 2. So my co-founders and I booked a 10 hour bus out to the highlands. I never imagined massive grass hills to be so breathtaking. Truly, some of the most stunning scenery and completely worth the fact our bus broke down twice.                </p>
+                </p>
+            </div>
+        </article>
+
+        <section class="more-stories">
+            <h2>more stories</h2>
+            <div class="stories-grid">
+                <a href="delft-netherlands.html" class="story-card">
+                    <img src="../img/IMG_6579.jpg" alt="Delft" loading="lazy">
+                    <span class="story-card-location">Delft, Netherlands</span>
+                </a>
+                <a href="rotterdam-netherlands.html" class="story-card">
+                    <img src="../img/IMG_6608.jpg" alt="Rotterdam" loading="lazy">
+                    <span class="story-card-location">Rotterdam, Netherlands</span>
+                </a>
+                <a href="paris-france.html" class="story-card">
+                    <img src="../img/paris.JPG" alt="Paris" loading="lazy">
+                    <span class="story-card-location">Paris, France</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
