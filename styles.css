@@ -65,10 +65,10 @@ body {
     height: 100%;
 }
 
-/* Small grid lines - hand-drawn effect with slight imperfections */
+/* Small grid lines - dashed for subtle effect */
 .graph-paper::before {
     background-image:
-        /* Vertical lines with slight wobble effect */
+        /* Vertical dashed lines */
         repeating-linear-gradient(
             90deg,
             transparent,
@@ -76,17 +76,24 @@ body {
             var(--line-color) 24px,
             var(--line-color) 25px
         ),
-        /* Horizontal lines */
+        /* Horizontal dashed lines */
         repeating-linear-gradient(
             0deg,
             transparent,
             transparent 24px,
             var(--line-color) 24px,
             var(--line-color) 25px
+        ),
+        /* Dashing mask - vertical */
+        repeating-linear-gradient(
+            0deg,
+            var(--bg-color),
+            var(--bg-color) 4px,
+            transparent 4px,
+            transparent 8px
         );
-    /* Add slight rotation for hand-drawn feel */
     transform: rotate(-0.2deg);
-    opacity: 0.9;
+    opacity: 0.5;
     transition: opacity var(--transition-speed) ease;
 }
 
@@ -98,16 +105,25 @@ body {
             transparent,
             transparent 99px,
             var(--line-color-strong) 99px,
-            var(--line-color-strong) 101px
+            var(--line-color-strong) 100px
         ),
         repeating-linear-gradient(
             0deg,
             transparent,
             transparent 99px,
             var(--line-color-strong) 99px,
-            var(--line-color-strong) 101px
+            var(--line-color-strong) 100px
+        ),
+        /* Dashing mask */
+        repeating-linear-gradient(
+            0deg,
+            var(--bg-color),
+            var(--bg-color) 6px,
+            transparent 6px,
+            transparent 12px
         );
     transform: rotate(0.1deg);
+    opacity: 0.4;
     transition: opacity var(--transition-speed) ease;
 }
 
@@ -286,6 +302,7 @@ main {
     margin-left: auto;
     margin-right: auto;
     transition: color var(--transition-speed) ease;
+    text-wrap: pretty;
 }
 
 .cta {
@@ -648,33 +665,31 @@ main {
 }
 
 .pin {
-    width: 12px;
-    height: 12px;
-    background: #ffffff;
+    width: 10px;
+    height: 10px;
+    background: #222222;
     border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
 .pin::after {
     content: '';
     position: absolute;
-    bottom: -6px;
+    bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    height: 6px;
-    background: linear-gradient(to bottom, #ffffff, #cccccc);
+    height: 5px;
+    background: #222222;
     border-radius: 1px;
 }
 
 [data-theme="dark"] .pin {
     background: #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="dark"] .pin::after {
-    background: linear-gradient(to bottom, #e0e0e0, #999999);
+    background: #e0e0e0;
 }
 
 .photo-location {

@@ -323,32 +323,48 @@ document.addEventListener('visibilitychange', () => {
     });
 })();
 
-// Scroll Reveal Animation for Photos
+// Scroll Reveal Animation for Photos (waits for image to load)
 (function() {
     const photos = document.querySelectorAll('.photo-item');
     if (!photos.length) return;
 
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '50px',
         threshold: 0.1
     };
 
+    const revealWhenReady = (photoItem, delay) => {
+        const img = photoItem.querySelector('img');
+
+        const reveal = () => {
+            setTimeout(() => {
+                photoItem.classList.add('revealed');
+            }, delay);
+        };
+
+        // If image already loaded (cached), reveal immediately
+        if (img.complete && img.naturalHeight !== 0) {
+            reveal();
+        } else {
+            // Wait for image to load
+            img.addEventListener('load', reveal, { once: true });
+            // Fallback: reveal after timeout if load event doesn't fire
+            setTimeout(reveal, 3000);
+        }
+    };
+
     const revealPhoto = (entries, observer) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Add staggered delay based on visible items
                 const visibleItems = Array.from(photos).filter(p =>
                     p.getBoundingClientRect().top < window.innerHeight &&
                     !p.classList.contains('revealed')
                 );
                 const staggerIndex = visibleItems.indexOf(entry.target);
-                const delay = Math.max(0, staggerIndex) * 100;
+                const delay = Math.max(0, staggerIndex) * 80;
 
-                setTimeout(() => {
-                    entry.target.classList.add('revealed');
-                }, delay);
-
+                revealWhenReady(entry.target, delay);
                 observer.unobserve(entry.target);
             }
         });
