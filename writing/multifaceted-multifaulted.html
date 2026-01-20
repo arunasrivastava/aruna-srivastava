@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Multifaceted, Multi-Faulted Personal Site | Aruna's Stuff</title>
+
+    <!-- Social preview -->
+    <meta property="og:title" content="My Multifaceted, Multi-Faulted Personal Site">
+    <meta property="og:description" content="Why I choose to pursue a beautiful pile of 3/4s">
+    <meta property="og:image" content="https://arunaaa.com/img/IMG_1751.webp">
+    <meta property="og:url" content="https://arunaaa.com/writing/multifaceted-multifaulted.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Globe emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+
+        .blog-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .blog-content {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px dashed var(--accent-color);
+            display: inline-block;
+        }
+
+        .blog-content .highlight {
+            background: linear-gradient(to bottom, transparent 60%, rgba(255, 193, 7, 0.3) 60%);
+            padding: 0 2px;
+        }
+
+        .blog-content .agenda-block {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .blog-content .fraction-heading {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+            color: var(--accent-color);
+        }
+
+        .closing-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--text-muted);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-to-blog:hover {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 600px) {
+            .blog-article {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .blog-content {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header>
+        <nav>
+            <div class="nav-signature">
+                <a href="../index.html" class="nav-home-link">
+                    <span class="by-text">from:</span>
+                    <span class="signature-name">Aruna</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <article class="blog-article">
+            <a href="./" class="back-to-blog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to blog
+            </a>
+
+            <h1 class="blog-title">My Multifaceted, Multi-Faulted Personal Site</h1>
+            <p class="blog-subtitle">Or: why I choose to pursue a beautiful pile of 3/4s</p>
+
+            <div class="blog-content">
+                <p>
+                    If this personal site seems scattered across interests, I am so glad :)
+                </p>
+                <p>
+                    I think it would be a waste of free will if I didn't try to try <span class="highlight">everything</span>. In reality, I'll only achieve 1% of "everything" possible, but I can certainly get much closer with a breadth of interests that seem completely orthogonal, almost contradictory to one another.
+                </p>
+
+                <div class="agenda-block">
+                    Today's agenda: stare into the depths of a repository debugging shitty code, grab my guitar to learn a few chords, scour the internet for a good flight deal to South America, test a new sourdough idea I had yesterday, then back to pushing a fix on some benchmarking code for a new model. Scattered? Maybe.
+                </div>
+
+                <h2>The Fallacy of Graduation</h2>
+                <p>
+                    I've observed a fallacy that many follow when pursuing new interests: that all new endeavors should be pursued <em>sequentially</em>. Reach a certain level of expertise in one particular field or subject, graduate from it, then build upon it with the next interest. But to be frank, that next interest usually follows death. Developing skills takes time, and reaching what's considered "sufficient expertise" is a race we rarely finish.
+                </p>
+                <p>
+                    The clearest illustration of this is in traveling. While it certainly takes enormous economic and passport privilege to globe hop, many people firmly believe they'll travel the world <em>after</em> they've found some arbitrary career success. It's described like this grand plan to fly first-class around the world for three years without working. This notion of "graduating" from a job to pursue a lifelong dream of traveling.
+                </p>
+
+                <h2>Scrappy Reality</h2>
+                <p>
+                    When my parents moved to Denmark, I followed them but stayed in the U.S. school system online. While I could have been sitting in Copenhagen on my shitty Surface for two years, I realized I could also spend online school hopping countries in between lectures. I learned that traveling can happen in the <span class="highlight">pockets of your everyday life</span> before any metaphorical or real "graduating" happens (if it ever does at all).
+                </p>
+                <p>
+                    The hugely expensive trip to Taiwan at 42 can become a two-month part-time job in Taipei City next month or tacked onto a business trip to Amsterdam in July.
+                </p>
+                <p>
+                    Will you get fucked over by losing internet in the countryside of France or almost forget a critical call while on a pedal boat in Belgium? Maybe. But to me, the scrappy chaos is a cost worth paying so that life doesn't need to be postponed for a so-called graduation.
+                </p>
+                <p>
+                    So yeah! In between receiving a degree in computer science (did actually graduate here), writing research papers, building a company, and many other fun endeavors, I traveled to <span class="highlight">25 countries</span>!
+                </p>
+
+                <p class="fraction-heading">3/4 + 3/4 + 3/4 &hellip;</p>
+                <p>
+                    Research, traveling, learning, cooking, exercising&mdash;they've all taught me to aim to be 3/4 accomplished with focus on longterm consistency. I already know that making a single 3/4 completely whole will likely never arrive. So I choose to take a beautiful pile of 1/4s and 3/4s and slowly develop them into a 7/8 or 15/16 (maybe 31/32?!). Having even two 3/4s is already more than a whole.
+                </p>
+                <p>
+                    For a long time, I struggled with the fact that things were not fully complete or whole. I felt burned out the moment someone (or myself) pointed out mistakes I made. But to be multifaceted is to be multi-faulted. I understand that my pursuits have many, many faults. Endless faults, in fact.
+                </p>
+                <p>
+                    The sourdough bread may not rise today, my PR might get flamed in review, and I might snap my guitar strings while learning to tune it&mdash;but that's just the beauty of the 3/4s life!
+                </p>
+
+                <p class="closing-note">
+                    As the first blog on my little site, I hope I gave some insight into wtf I'm doing and inspired you to pursue a 3/4 of an interest!
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>

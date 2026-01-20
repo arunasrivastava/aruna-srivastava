@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Self that Sharpens | Aruna's Stuff</title>
+
+    <!-- Social preview -->
+    <meta property="og:title" content="The Self that Sharpens">
+    <meta property="og:description" content="For those struggling with a critical figure">
+    <meta property="og:image" content="https://arunaaa.com/img/IMG_1751.webp">
+    <meta property="og:url" content="https://arunaaa.com/writing/the-self-that-sharpens.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Globe emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+
+        .blog-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .blog-content {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px dashed var(--accent-color);
+            display: inline-block;
+        }
+
+        .blog-content .highlight {
+            background: linear-gradient(to bottom, transparent 60%, rgba(255, 193, 7, 0.3) 60%);
+            padding: 0 2px;
+        }
+
+        .blog-content .poetic-block {
+            font-style: italic;
+            text-align: center;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-left: none;
+            position: relative;
+            color: var(--text-muted);
+            font-size: 1.15rem;
+        }
+
+        .blog-content .poetic-block::before,
+        .blog-content .poetic-block::after {
+            content: '~';
+            display: block;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .blog-content .quotes-block {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .blog-content .quotes-block p {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content .quotes-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .closing-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--text-muted);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-to-blog:hover {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 600px) {
+            .blog-article {
+                padding: 5rem 1rem 3rem;
+            }
+
+            .blog-content {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header>
+        <nav>
+            <div class="nav-signature">
+                <a href="../index.html" class="nav-home-link">
+                    <span class="by-text">from:</span>
+                    <span class="signature-name">Aruna</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <article class="blog-article">
+            <a href="./" class="back-to-blog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to blog
+            </a>
+
+            <h1 class="blog-title">The Self that Sharpens</h1>
+            <p class="blog-subtitle">For those struggling with a critical figure</p>
+
+            <div class="blog-content">
+                <p>
+                    Something about being around family can bring you spiraling back into your past self. It is the soil settled in clear water that gets stirred and clouds the waters you believed you had spent time purifying.
+
+                </p>
+
+
+                <p>
+                    When my mom came to visit me, I could feel her eyes sweep my apartment and my clothes as a sharp frustration and itch of perfection crawled through my body.
+                </p>
+
+                <div class="quotes-block">
+                    <p>"Your floor looks very dusty, have you vacuumed?"</p>
+                    <p>"You look tired these days."</p>
+                    <p>"You need a dermatologist for your skin."</p>
+                </div>
+
+                <p>
+                    I felt every small comment about a dirty spoon or ill-fitting clothes echo in my head, and I thought of all the infinite tasks I could have done to seem more perfect and idyllic to her liking. My frustration goes beyond the comments&mdash;it's a <span class="highlight">frustration of being frustrated</span>. I thought there was no soil left to stir. I thought I had purified the water of insecurity and self-loathing. 
+                </p>
+
+                <p>
+                    I desperately want to blame my mother for the way I feel. She has made comments about my appearance, behavior, and life from a very young and impressionable age that have permanently "damaged" my self-image and self-perception.
+                </p>
+
+                <p>
+                    But I am looking in the wrong direction.
+                </p>
+
+                <h2>Arrogance</h2>
+
+                <p>
+                    The greater culprit of my frustration sprouts from a seed of arrogance. I have never perceived anyone's messiness or lack of achievement as a fault or reason to appreciate them any less. Yet my own arrogance blocks such logic from being applied to myself.
+                </p>
+
+                <p>
+                    Instead, I feel that I am someone of great perfection and knowledge, and that the love and admiration I receive is <span class="highlight">conditioned on this fact</span>. Therefore, demonstrating imperfection&mdash;like those dirty towels on my bathroom floor or the check I haven't cashed for two months&mdash;is evidence of a reality of myself that I do not want to accept.
+                </p>
+
+                <p>
+                    While this feeling of being "not enough" around family is real, unfair, and unkind at times, I find so much more agency in recognizing this to be deeply rooted in my own arrogance.
+                </p>
+
+                <p>
+                    <em>It is my very sense of self that determines the <span class="highlight">sharpness of the cruelty.</span> </em>
+                </p>
+
+                <h2>Swords into Passing Clouds</h2>
+
+                <p>
+                    My arrogance will try to turn comments and nitpicks into a pointed sword, but my humility will allow them to be a passing cloud. A cloud that will pass through my imperfect self but never hold any weight. Because if the claims and comments were to be true, they would only be acknowledging imperfection, rather than introducing the concept of imperfection to my perfectionist self.
+                </p>
+
+                <p>
+                    I do not need to walk the tightrope of perfection.
+                </p>
+
+                <p>
+                    When I jump off this rope, the ground is soft and colorful and warm. It lets me embrace me. When I no longer want perfection of myself, my mother's perfectionist comments are not reaching anyone balancing on a tightrope. I am laying beneath this rope, rolling on the soft, lush, colorful, feathery grass, warmed by the sun, next to a cold river, <span class="highlight">unbothered</span>.
+                </p>
+
+                <h2>Letting Go</h2>
+
+                <p>
+                    So I can let go of my mom's comments. Not because I have learned to ignore her. Not because I have justified her weirdly specific comments about me. But because I understand myself.
+                </p>
+
+                <p>
+                    I can distinguish the sparkling flaws of my true self from the weightless clouds of her observations such that I can simply embrace me. This is what humility does for me. It guides me to find not just acceptance for myself, but for the relationships I have with others.
+                </p>
+
+                <p>
+                    I am not defending my shining silver statue balancing upon a tightrope, fighting daggers and swords of hate, but simply being&mdash;as an imperfect human that has turned sharp points into pillows.
+                </p>
+
+                <p class="closing-note">
+                    I have learned that I have far more autonomy in how I feel than I previously allowed. The self that is naively balancing on a tightrope&mdash;stiff, disgruntled, easily ready to tip and fall&mdash;could be rolling on the lush grass floor instead. This floor has equal ability to home your greatest achievements and successes as a tightrope. But it will be a far more enjoyable and freeing space.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
