@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What It Means to Be the Only Woman | Aruna's Stuff</title>
+
+    <!-- Social preview -->
+    <meta property="og:title" content="What It Means to Be the Only Woman">
+    <meta property="og:description" content="Finding perspective when you're the minority in the room">
+    <meta property="og:image" content="https://arunaaa.com/img/IMG_1751.webp">
+    <meta property="og:url" content="https://arunaaa.com/writing/what-it-means-to-be-the-only-woman.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Globe emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+
+        .blog-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .blog-content {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px dashed var(--accent-color);
+            display: inline-block;
+        }
+
+        .blog-content .highlight {
+            background: linear-gradient(to bottom, transparent 60%, rgba(255, 193, 7, 0.3) 60%);
+            padding: 0 2px;
+        }
+
+        .blog-content .agenda-block {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .blog-content .fraction-heading {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+            color: var(--accent-color);
+        }
+
+        .closing-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--text-muted);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-to-blog:hover {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 600px) {
+            .blog-article {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .blog-content {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header>
+        <nav>
+            <div class="nav-signature">
+                <a href="../index.html" class="nav-home-link">
+                    <span class="by-text">from:</span>
+                    <span class="signature-name">Aruna</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <article class="blog-article">
+            <a href="./" class="back-to-blog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to blog
+            </a>
+
+            <h1 class="blog-title">What It Means to Be the Only Woman</h1>
+            <p class="blog-subtitle">Finding perspective when you're the minority in the room</p>
+
+            <div class="blog-content">
+                <p>
+                    Across AI research labs, startup offices, and engineering conferences, I routinely enter rooms where I'm one of few women, or the only one. Sometimes it's 1:2. Sometimes 1:100.
+                </p>
+                <p>
+                    It's become so routine that I often forget to notice.
+                </p>
+                <p>
+                    One night at a founder event on the 45th floor of a gorgeous bar overlooking San Francisco, I'm deep in a game of pool with some friends when a woman taps my shoulder and introduces herself. We strike up a conversation while walking over to the bar and she whispers, "holy shit, how are we the only women here". She's right. Nothing but a sea of polos and quarter zips.
+                </p>
+                <p>
+                    While I certainly agree with my new best friend, yes, this is the ratio of an engineering class in the 80s, every person in this room is likewise the "only" something.
+                </p>
+                <p>
+                    Even if you're not a woman, there's some axis that makes you the minority in the room, whether you realize it or not. Once you find that axis, your mind will give you plenty of reasons to hate it.
+                </p>
+                <p>
+                    But like most things in this world, there are two sides to the coin.
+                </p>
+                <p>
+                    I would like to discuss the side less seen.
+                </p>
+
+                <h2>Congrats! You Are Not Completely Forgettable</h2>
+                <p>
+                    In the case that others also observe the axis that singles you out, there are great opportunities to be made of it.
+                </p>
+                <p>
+                    This past winter, my co-founders and I presented in SF under an incredible grant Mozilla had provided us. We stepped on a stage to present to some big names in tech and a sizable group of investors and cameras. I remember observing the first founder casually stroll the stage with confidence that evidently possessed a very stereotypical "founder energy."
+                </p>
+                <p>
+                    I definitely did not feel like I could have such stage presence in my heels from high school band and long dark curly hair.
+                </p>
+                <p>
+                    Yet when media came out about this big AI tech event in SF, I was on the cover of the article. Terrible photo (pls don't search).
+                </p>
+                <p>
+                    While it felt like they diversity-tokened my ass, people got interested in the work we were doing. I decided to let some embarrassing tech articles with my face on them be an opportunity to capitalize on. Some of the best connections came from that article.
+                </p>
+                <p>
+                    That week I learned: <span class="highlight">If eyes initially follow for how you look, keep them following for what you do.</span>
+                </p>
+
+                <h2>Stop Fixating on It</h2>
+                <p>
+                    I remember hearing Morgan Freeman's bold response to an interviewer who asked "how are we gonna get rid of racism". Without hesitation, he said: "stop talking about it"
+                </p>
+                <p>
+                    It seemed like a crude response from a black man who should be a loud advocate for racial justice, but in many ways, he was right.
+                </p>
+                <p>
+                    Society loves clustering humans. There is a glowing, bright experience of life we share that is overcast by dark shadows trying to differentiate and separate us. This is largely constructed by a societal norm to fixate on singular identities. "I am a woman" "You are a man"
+                </p>
+                <p>
+                    It is so easy for me to step into a classroom and see 40 dudes who will never know the pain of period cramps and washing your favorite light-wash denim of blood in a sink. But that classroom also has 41 students who are all deeply curious about the world around them, love Professor Gupta's weird analogies, and need help on assignment 2 because the instructions make no sense.
+                </p>
+                <p>
+                    Likewise, 41 students who are also endlessly different as they are similar.
+                </p>
+                <p>
+                    I have learned that I can actually decide to be in the minority or majority. That is, I get to decide what to measure similarity by. It can be on anything from musical preference to how much we like our parents to believing Big Foot exists. Depending on the axis I choose, the two asian dudes wearing the same nike hoodie and Pacsun slacks can be just as different from each other as they are from me (A WOMAN?!).
+                </p>
+                <p>
+                    It is this understanding that makes me feel like I am not a woman in the group but simply <span class="highlight">a part of the group</span>.
+                </p>
+                <p>
+                    Of course, it's much harder to say this if this is among 40 Andrew Tate diehard fans and just me. Certainly, when it feels like everyone does not respect your identity, then your identity becomes a key differentiator. But more often than not, that is not the case. Yes, you might need to whack a few on the head, because people can be fucking assholes sometimes. But the 1% of particularly bad experiences should not be defining the 99%.
+                </p>
+                <p>
+                    I think it is important to remember that you have autonomy in deciding if your uniqueness will alienate you or showcase you. <span class="highlight">A cage or a stage.</span>
+                </p>
+
+                <p class="closing-note">
+                    And this is how I navigate being the "girl" of the class or the "woman" of the team.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>

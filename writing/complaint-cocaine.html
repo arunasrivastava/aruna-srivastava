@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Cocaine | Aruna's Stuff</title>
+
+    <!-- Social preview -->
+    <meta property="og:title" content="Complaint Cocaine">
+    <meta property="og:description" content="On the addictive nature of negativity">
+    <meta property="og:image" content="https://arunaaa.com/img/IMG_1751.webp">
+    <meta property="og:url" content="https://arunaaa.com/writing/complaint-cocaine.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Globe emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+
+        .blog-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .blog-content {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px dashed var(--accent-color);
+            display: inline-block;
+        }
+
+        .blog-content .highlight {
+            background: linear-gradient(to bottom, transparent 60%, rgba(255, 193, 7, 0.3) 60%);
+            padding: 0 2px;
+        }
+
+        .blog-content .agenda-block {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .blog-content .fraction-heading {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+            color: var(--accent-color);
+        }
+
+        .closing-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--text-muted);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-to-blog:hover {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 600px) {
+            .blog-article {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .blog-content {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header>
+        <nav>
+            <div class="nav-signature">
+                <a href="../index.html" class="nav-home-link">
+                    <span class="by-text">from:</span>
+                    <span class="signature-name">Aruna</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <article class="blog-article">
+            <a href="./" class="back-to-blog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to blog
+            </a>
+
+            <h1 class="blog-title">Complaint Cocaine</h1>
+            <p class="blog-subtitle">On the addictive nature of negativity</p>
+
+            <div class="blog-content">
+                <p>
+                    There is something exceptionally easy about building a connection upon a complaint.
+                </p>
+                <p>
+                    It is sticky. People quickly attach to your complaint about the incompetent coworker or miserable weather and some unnamed idiotic political leader.
+                </p>
+                <p>
+                    I remember stepping into a silent elevator with 5 people yesterday and there was not a word spoken. The elevator doors took a long time to shut and I blurted: "I cannot believe they have not fixed these doors in 2 weeks". Conversation immediately bubbled in the elevator and we all exited the elevator talking.
+                </p>
+                <p>
+                    Pessimism is such an interesting entry point. I can present myself as more intelligent and charismatic by being unsatisfied with the state of... anything.
+                </p>
+                <p>
+                    Working as an engineer, I demonstrate my own competence by pointing out incompetence. For example, I show the principle engineers on the team how the existing codebase has X redundancies and pinpointing specific package versions that completely slow down the environment setup. I have pointed to flaws to showcase myself as detail-oriented.
+                </p>
+                <p>
+                    However, I would likely have to work much harder to use positive highlights of the codebase to demonstrate my eye for detail because that's not really going to improve the codebase and therefore receive much attention.
+                </p>
+                <p>
+                    This ability to complain sharpens as you rise in prestige. Corporate executives complain the most. If you disagree, you have not worked in a large company. It seems like the fastest way to demonstrate intellectual capability while imposing your opinions quickly. <span class="highlight">To think critically is to criticize.</span>
+                </p>
+                <p>
+                    So clearly I have observed the fact that the earth is round. People like to be negative.
+                </p>
+                <p>
+                    But it's more than a likeness to negativity. It is a <span class="highlight">lifetime focused on absence rather than presence</span>.
+                </p>
+                <p>
+                    And while in many ways I think you need to turn this mode on as a tool, I think most people have lost awareness that they can, or should, turn it off.
+                </p>
+                <p>
+                    I think before being present and positive, we all could reflect more deeply on how we rely on complaint cocaine. This drug that gives us a social boost, a little bit of charisma, and intellectual credibility that is hard to give up. Your Complaint Cocaine.
+                </p>
+
+                <p class="closing-note">
+                    Stop snorting complaint cocaine.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
