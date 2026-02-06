@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seattle, Washington | Aruna's Stories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header class="blog-header">
+        <nav>
+            <a href="../photography.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to gallery
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main class="blog-main">
+        <article class="story-article">
+            <div class="story-gallery">
+                <div class="story-gallery-images">
+                    <img src="../img/seattle-1.webp" alt="Seattle skyline at dusk with plane" class="active">
+                    <img src="../img/seattle-2.webp" alt="Seattle" loading="lazy">
+                </div>
+                <button class="story-gallery-next" aria-label="Next image">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+                <div class="story-gallery-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="story-content">
+                <div class="story-location">
+                    <span class="pin"></span>
+                    <h1>Seattle, Washington</h1>
+                </div>
+                <p class="story-text">
+                    On a cold February day, I grabbed my camera while running in sandals to capture this shot from the rooftop. I saw the plane flying in and timed it just right.
+                </p>
+                <p class="story-text">
+                    Seattle will always be my home and I am forever grateful for the city that taught me so much about myself. For this view to be from the rooftop of my apartment is such a gift (and evidence of some pretty solid work thus far).
+                </p>
+                <p class="story-text">
+                    While I can feel my time in Seattle is setting, there is nothing but conviction and excitement ahead.
+                </p>
+                <p class="story-text">
+                    Ruslan and I like to say the two black buildings with the blue and green ring lights are the Koel towers. I believe that one day we will have a tower standing tall in the skyline to be admired.
+                </p>
+            </div>
+        </article>
+
+        <section class="more-stories">
+            <h2>more stories</h2>
+            <div class="stories-grid">
+                <a href="tokyo-japan.html" class="story-card">
+                    <img src="../img/shibuya.webp" alt="Tokyo" loading="lazy">
+                    <span class="story-card-location">Tokyo, Japan</span>
+                </a>
+                <a href="paris-france.html" class="story-card">
+                    <img src="../img/paris.webp" alt="Paris" loading="lazy">
+                    <span class="story-card-location">Paris, France</span>
+                </a>
+                <a href="jioufen-taiwan.html" class="story-card">
+                    <img src="../img/IMG_1751.webp" alt="Jioufen" loading="lazy">
+                    <span class="story-card-location">Jioufen, Taiwan</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
