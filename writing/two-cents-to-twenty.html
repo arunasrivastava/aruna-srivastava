@@ -183,7 +183,7 @@
 
         .control-bar-track {
             display: flex;
-            height: 62px;
+            height: 56px;
             border-radius: 10px;
             overflow: hidden;
             border: 1px solid var(--line-color-strong);
@@ -191,14 +191,7 @@
         }
 
         .control-bar-track .seg {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Patrick Hand', cursive;
-            font-size: 1.05rem;
-            white-space: nowrap;
             width: 0;
-            overflow: hidden;
             transition: width 1.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -207,14 +200,42 @@
 
         .control-bar-track .seg-you {
             background: var(--accent-color);
-            color: #fff;
-            font-weight: 600;
         }
 
         .control-bar-track .seg-world {
-            color: var(--text-secondary);
-            padding: 0 1rem;
+            background: var(--line-color-strong);
         }
+
+        .control-bar-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1.4rem;
+            margin-top: 0.85rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1rem;
+        }
+
+        .control-bar-legend .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: var(--text-secondary);
+        }
+
+        .control-bar-legend .legend-you {
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .control-bar-legend .swatch {
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .control-bar-legend .legend-you .swatch { background: var(--accent-color); }
+        .control-bar-legend .legend-world .swatch { background: var(--line-color-strong); }
 
         .control-bar figcaption {
             font-family: 'Patrick Hand', cursive;
@@ -339,8 +360,12 @@
 
                 <figure class="control-bar" aria-label="A bar showing roughly 10% of a life outcome is within your control and 90% is external conditions you did not choose">
                     <div class="control-bar-track">
-                        <div class="seg seg-you">~10% you</div>
-                        <div class="seg seg-world">~90% — the world you didn't choose</div>
+                        <div class="seg seg-you"></div>
+                        <div class="seg seg-world"></div>
+                    </div>
+                    <div class="control-bar-legend">
+                        <span class="legend-item legend-you"><span class="swatch"></span>~10% &mdash; you</span>
+                        <span class="legend-item legend-world"><span class="swatch"></span>~90% &mdash; the world you didn't choose</span>
                     </div>
                     <figcaption>A rough guess at how much of any outcome you actually steer. </figcaption>
                 </figure>
