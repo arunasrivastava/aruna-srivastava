@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Cents to 20 | Aruna's Stuff</title>
+
+    <!-- Social preview -->
+    <meta property="og:title" content="2 Cents to 20">
+    <meta property="og:description" content="on advice, and why you can't borrow a life">
+    <meta property="og:image" content="https://arunaaa.com/img/IMG_1751.webp">
+    <meta property="og:url" content="https://arunaaa.com/writing/two-cents-to-twenty.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Globe emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+
+        .blog-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .blog-content {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px dashed var(--accent-color);
+            display: inline-block;
+        }
+
+        .blog-content .highlight {
+            background: linear-gradient(to bottom, transparent 60%, rgba(255, 193, 7, 0.3) 60%);
+            padding: 0 2px;
+        }
+
+        .blog-content .agenda-block {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        /* hover-to-define term */
+        .blog-content .term {
+            position: relative;
+            color: var(--accent-color);
+            border-bottom: 2px dotted var(--accent-color);
+            cursor: help;
+        }
+
+        .blog-content .term .tooltip {
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% + 12px);
+            transform: translateX(-50%) translateY(5px);
+            width: min(320px, 78vw);
+            background: var(--card-bg);
+            border: 1px solid var(--line-color-strong);
+            border-radius: 10px;
+            padding: 0.8rem 0.95rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 0.98rem;
+            font-style: normal;
+            line-height: 1.5;
+            color: var(--text-color);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 10;
+            text-align: left;
+            cursor: default;
+        }
+
+        .blog-content .term .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 7px solid transparent;
+            border-top-color: var(--card-bg);
+        }
+
+        .blog-content .term:hover .tooltip,
+        .blog-content .term:focus .tooltip,
+        .blog-content .term:focus-within .tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .blog-content .term .tooltip .cite {
+            display: block;
+            margin-top: 0.4rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .blog-content .term .tooltip .cite:hover {
+            text-decoration: underline;
+        }
+
+        .blog-content .lessons {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding: 0;
+            counter-reset: lesson;
+        }
+
+        .blog-content .lessons li {
+            position: relative;
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem 1rem 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content .lessons li::before {
+            counter-increment: lesson;
+            content: counter(lesson);
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            width: 1.8rem;
+            height: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--accent-color);
+            color: #fff;
+            font-family: 'Caveat', cursive;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        /* control bar visual */
+        .control-bar {
+            margin: 2rem 0 1.5rem;
+        }
+
+        .control-bar-track {
+            display: flex;
+            height: 62px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--line-color-strong);
+            background: var(--line-color);
+        }
+
+        .control-bar-track .seg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.05rem;
+            white-space: nowrap;
+            width: 0;
+            overflow: hidden;
+            transition: width 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .control-bar.in-view .seg-you { width: 10%; }
+        .control-bar.in-view .seg-world { width: 90%; }
+
+        .control-bar-track .seg-you {
+            background: var(--accent-color);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .control-bar-track .seg-world {
+            color: var(--text-secondary);
+            padding: 0 1rem;
+        }
+
+        .control-bar figcaption {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            text-align: center;
+            font-style: italic;
+            margin-top: 0.7rem;
+            line-height: 1.5;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .control-bar-track .seg { transition: none; }
+        }
+
+        .closing-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--text-muted);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-to-blog:hover {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 600px) {
+            .blog-article {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .blog-content {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header>
+        <nav>
+            <div class="nav-signature">
+                <a href="../index.html" class="nav-home-link">
+                    <span class="by-text">from:</span>
+                    <span class="signature-name">Aruna</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <article class="blog-article">
+            <a href="./" class="back-to-blog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to blog
+            </a>
+
+            <h1 class="blog-title">2 Cents to 20</h1>
+            <p class="blog-subtitle">on advice, and why you can't borrow a life</p>
+
+            <div class="blog-content">
+                <p>
+                    Everyone is spilling their <span class="term" tabindex="0">two cents<span class="tooltip" role="tooltip">"An American and Australian idiomatic expression for offering one's opinion," usually unsolicited. The tiny price tag is the whole point — it politely depreciates the opinion before it lands.<a class="cite" href="https://en.wikipedia.org/wiki/My_two_cents" target="_blank" rel="noopener">— Wikipedia</a></span></span> everywhere. Advice on how to get 100 grams of protein by eating watery chocolate tofu fudge, advice on how to maximize productivity with 42 parallel AI agents, advice on job-maxing, blah blah blah.
+                </p>
+                <p>
+                    Everyone is well-meaning, of course. But the underlying faults on both sides — the advisee and the advisor — need to be carefully understood.
+                </p>
+
+                <h2>Advisorship Fallacies</h2>
+                <p>
+                    Advisors often fall into the trap of advisorship when they believe their life journey has some nature of recreatability and relatability. The reality is that external conditions have deeply shaped our life experience and belief.
+                </p>
+                <p>
+                    When we feel we have worked hard and played our cards well, we naively conclude that positive outcomes arise from internal conditions we are responsible for. Yet given that we cannot control the communities we are born into, our academic resources, how good our parents are at fostering our curiosity, and infinitely more conditions — it is difficult to say we are responsible for even <span class="highlight">10%</span> of the outcomes we see in ourselves.
+                </p>
+
+                <figure class="control-bar" aria-label="A bar showing roughly 10% of a life outcome is within your control and 90% is external conditions you did not choose">
+                    <div class="control-bar-track">
+                        <div class="seg seg-you">~10% you</div>
+                        <div class="seg seg-world">~90% — the world you didn't choose</div>
+                    </div>
+                    <figcaption>A rough guess at how much of any outcome you actually steer. </figcaption>
+                </figure>
+
+                <p>
+                    This is not to say we control none of our outcomes, but it is important to remember that external conditions make our journey deeply unique. So unique, in fact, that your life is simply <span class="highlight">not recreatable</span>. How amazing and frightening is that.
+                </p>
+                <p>
+                    Many advisors forget this. I once heard an engineer at Google advise aspiring students: "network and leetcode for 6 months straight and you'll bag it." As much as leetcoding and networking helped <em>her</em>, she failed to consider the infinite quiet ingredients to her success: Google's hiring bandwidth that year, the natural confidence her parents instilled in her, the random bond she and her final interviewer struck up over Cheerios, and so many other external outcomes. It is far too hard for a human to disentangle the factors responsible for an outcome in their own life.
+                </p>
+                <p>
+                    Advice, then, must be given with respect for the understanding that every lifetime is deeply personal. To impose advice believing you can prevent failure and manufacture success for another being — by transcendence of your own experience — is simply denying the uniqueness of a human life.
+                </p>
+
+                <h2>Advisee Fallacies</h2>
+                <p>
+                    Likewise, an advisee who patiently listens to hold onto advice naively believes they can derive a life from another.
+                </p>
+                <p>
+                    On a particularly indecisive day in fall, I went to talk with my favorite professor, Robbie, about wtf to do post-undergrad. I had learned from Robbie as a student and worked with him as a TA for the entirety of my CS degree. If he knew me well enough, surely he could give me insight into my own life.
+                </p>
+                <p>
+                    We began discussing the possibility of a master's, and just as I went off on a tangent about wanting autonomy, Robbie paused me and asked, "have you considered a PhD?" I laughed — I could not see myself in a PhD program.
+                </p>
+                <p>
+                    But then we talked about what my actual goals were: independence, autonomy, the pursuit of curiosity and novelty. All of them were far more in line with a PhD.
+                </p>
+                <p>
+                    It made sense. But I had no trust in myself to determine whether I was a good fit to pursue one. So I continued office-hopping for another week, now asking my former professors to help decide between industry, a master's, and a PhD. I went back and forth, weighing whether their journey through a PhD was a success I could replicate. I was trying to turn their two cents into twenty — to manufacture a sense of security out of their knowledge.
+                </p>
+                <p>
+                    As much insight as each of my professors could offer, the reality was that none of it would actually help me conclude whether I was a "good fit." Their journeys were so specific to their environmental conditions and personal preferences that it would be impossible to find <em>my</em> fit inside <em>their</em> experience. <span class="highlight">Comfort could never be found from advice.</span>
+                </p>
+                <p>
+                    My days of running between offices taught me two things about being both an advisee and an advisor.
+                </p>
+
+                <ol class="lessons">
+                    <li>The comfort of knowing you're a good fit for something does not come from advice that "resonates" or an advisor who "sees you." Comfort is found in trusting yourself and your capability. That takes a long time to understand — so don't rush it.</li>
+                    <li>A good advisor questions more than they answer. They offer a new perspective (like Robbie suggesting a PhD) that helps you decide for yourself. Any advisor who hands you a guide of sweeping generalizations — usually starting with "you just need to…" — is undermining reality.</li>
+                </ol>
+
+                <p>
+                    This past year, reflecting deeply on my own experiences has distilled far greater insight than reflecting on someone else's. I hope it might encourage you to do the same.
+                </p>
+
+                <p class="closing-note">
+                    Don't let 2 cents become 20 :)
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        (function () {
+            var bar = document.querySelector('.control-bar');
+            if (!bar) return;
+            if ('IntersectionObserver' in window) {
+                var obs = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) {
+                            bar.classList.add('in-view');
+                            obs.disconnect();
+                        }
+                    });
+                }, { threshold: 0.4 });
+                obs.observe(bar);
+            } else {
+                bar.classList.add('in-view');
+            }
+        })();
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>

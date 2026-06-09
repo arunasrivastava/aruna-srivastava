@@ -8,6 +8,8 @@
     --accent-color: #74a1b1;
     --accent-hover: #3a7bc8;
     --nav-bg: rgba(250, 249, 246, 0.85);
+    --text-muted: #7a8a99;
+    --card-bg: #f3f1ec;
     --transition-speed: 0.4s;
 }
 
@@ -20,6 +22,8 @@
     --accent-color: #5780a3;
     --accent-hover: #8fc4f5;
     --nav-bg: rgba(10, 10, 10, 0.85);
+    --text-muted: #9a9a9a;
+    --card-bg: #161616;
 }
 
 /* Reset and base styles */
@@ -1073,6 +1077,25 @@ main {
     font-family: 'Patrick Hand', cursive;
     font-size: 0.95rem;
     color: var(--text-secondary);
+}
+
+.reading-note {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.55;
+    margin-top: 0.7rem;
+    padding-left: 0.85rem;
+    border-left: 3px solid var(--accent-color);
+    opacity: 0.92;
+}
+
+.reading-note .note-label {
+    font-family: 'Caveat', cursive;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-right: 0.3rem;
 }
 
 .reading-category {

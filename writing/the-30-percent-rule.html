@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 30% Rule | Aruna's Stuff</title>
+
+    <!-- Social preview -->
+    <meta property="og:title" content="The 30% Rule">
+    <meta property="og:description" content="we are all going thru it">
+    <meta property="og:image" content="https://arunaaa.com/img/IMG_1751.webp">
+    <meta property="og:url" content="https://arunaaa.com/writing/the-30-percent-rule.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Globe emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+
+        .blog-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .blog-content {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px dashed var(--accent-color);
+            display: inline-block;
+        }
+
+        .blog-content .highlight {
+            background: linear-gradient(to bottom, transparent 60%, rgba(255, 193, 7, 0.3) 60%);
+            padding: 0 2px;
+        }
+
+        .blog-content .agenda-block {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .blog-content .fraction-heading {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+            color: var(--accent-color);
+        }
+
+        .suffering-chart {
+            margin: 2rem 0 1.5rem;
+            background: var(--line-color);
+            border: 1px solid var(--line-color-strong);
+            border-radius: 12px;
+            padding: 1.25rem 1rem 0.85rem;
+        }
+
+        .suffering-chart svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            overflow: visible;
+        }
+
+        .suffering-chart .axis-label {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 18px;
+            fill: var(--text-secondary);
+        }
+
+        .suffering-chart .mean-label {
+            font-family: 'Caveat', cursive;
+            font-size: 26px;
+            font-weight: 600;
+            fill: var(--accent-color);
+        }
+
+        .suffering-chart figcaption {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            text-align: center;
+            font-style: italic;
+            margin-top: 0.6rem;
+            line-height: 1.5;
+        }
+
+        .mean-line {
+            stroke: var(--accent-color);
+            stroke-width: 2.5;
+            stroke-dasharray: 7 7;
+            opacity: 0.9;
+        }
+
+        .life-curve {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 1;
+            stroke-dashoffset: 1;
+        }
+
+        .suffering-chart.in-view .life-curve {
+            animation: draw-life 3.4s ease forwards;
+        }
+
+        .life-curve.bg {
+            stroke: var(--text-secondary);
+            opacity: 0.5;
+            stroke-width: 1.8;
+        }
+
+        .life-curve.you {
+            stroke: var(--accent-color);
+            stroke-width: 4;
+            opacity: 1;
+        }
+
+        @keyframes draw-life {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .suffering-chart.in-view .life-curve { animation: none; }
+            .life-curve { stroke-dashoffset: 0; }
+        }
+
+        .closing-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--text-muted);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-to-blog:hover {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 600px) {
+            .blog-article {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .blog-content {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header>
+        <nav>
+            <div class="nav-signature">
+                <a href="../index.html" class="nav-home-link">
+                    <span class="by-text">from:</span>
+                    <span class="signature-name">Aruna</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <article class="blog-article">
+            <a href="./" class="back-to-blog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to blog
+            </a>
+
+            <h1 class="blog-title">The 30% Rule</h1>
+            <p class="blog-subtitle">we are all going thru it</p>
+
+            <div class="blog-content">
+                <p>
+                    Today I was leaving a university campus and overheard a girl explain in frustration: "People always assume being an international student is easy because we have money. They have no idea how hard it is to be away from family."
+                </p>
+                <p>
+                    The following evening I heard the inverse complaint: "International students have no idea what it's like to not know where your next quarter's tuition will come from. They just show up to class in Chanel pajamas."
+                </p>
+                <p>
+                    Everyone has <span class="highlight">"no idea."</span>
+                </p>
+                <p>
+                    We feel separated by how our human experiences are non-transferable. No one but ourselves experiences them, so everyone has "no idea."
+                </p>
+                <p>
+                    This is best illustrated when you see two siblings hitting each other and arguing about who hit the other "harder" (speaking from experience). The hits get gradually harder as neither sibling comes to understand that severity and pain cannot be understood beyond the self.
+                </p>
+                <p>
+                    But the childish punch war continues into our adult lives where we naively pursue empathy, praise, and pity by comparing our pain and suffering against each others. They take some form of <em>no idea complaints</em>: "look at how hard my circumstances are, this person has no idea."
+                </p>
+
+                <h2>The 30% Rule</h2>
+                <p>
+                    I believe there is a remedy to this complaint: to understand that our lifetime suffering has some degree of equivalence to those around us.
+                </p>
+                <div class="agenda-block">
+                    For our wonderful gifted lives, we will each spend an average of 30% of it suffering. There will be spikes, but averaged out, it comes to 30% of suffering for all of us — despite all but our own suffering being unobservable.
+                </div>
+
+                <figure class="suffering-chart" aria-label="A chart of many fluctuating life curves that all average to about 30% suffering">
+                    <svg id="sufferingSvg" viewBox="0 0 1000 400" role="img" preserveAspectRatio="xMidYMid meet">
+                        <line class="mean-line" x1="55" y1="264" x2="945" y2="264"></line>
+                        <text class="mean-label" x="945" y="256" text-anchor="end">~30% average</text>
+                        <text class="axis-label" x="500" y="392" text-anchor="middle">a lifetime  →</text>
+                        <text class="axis-label" x="20" y="210" text-anchor="middle" transform="rotate(-90 20 210)">suffering  ↑</text>
+                        <g id="lifeCurves"></g>
+                    </svg>
+                    <figcaption>Every faint line is a life — spiking, dipping, completely its own. The bold one could be yours. Average any of them and you land in the same place: about 30%.</figcaption>
+                </figure>
+                <script>
+                    (function () {
+                        var svg = document.getElementById('lifeCurves');
+                        if (!svg) return;
+                        var SVGNS = 'http://www.w3.org/2000/svg';
+                        var left = 55, right = 945, top = 40, bottom = 360; // 30% maps to y=264 (the mean line)
+                        var N = 16;
+
+                        function makeLife() {
+                            var comps = [];
+                            var k = 2 + Math.floor(Math.random() * 3);
+                            for (var i = 0; i < k; i++) {
+                                comps.push({
+                                    amp: 9 + Math.random() * 26,
+                                    freq: 0.5 + Math.random() * 3,
+                                    phase: Math.random() * Math.PI * 2
+                                });
+                            }
+                            var vals = [];
+                            for (var j = 0; j < N; j++) {
+                                var t = j / (N - 1), v = 0;
+                                for (var c = 0; c < comps.length; c++) {
+                                    v += comps[c].amp * Math.sin(comps[c].freq * Math.PI * 2 * t + comps[c].phase);
+                                }
+                                vals.push(v);
+                            }
+                            var mean = vals.reduce(function (a, b) { return a + b; }, 0) / N;
+                            return vals.map(function (v) {
+                                return Math.max(4, Math.min(96, v - mean + 30));
+                            });
+                        }
+
+                        function toPoints(vals) {
+                            return vals.map(function (v, i) {
+                                var x = left + (right - left) * (i / (vals.length - 1));
+                                var y = bottom - (v / 100) * (bottom - top);
+                                return [x, y];
+                            });
+                        }
+
+                        function smoothPath(pts) {
+                            if (pts.length < 2) return '';
+                            var d = 'M ' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1);
+                            for (var i = 0; i < pts.length - 1; i++) {
+                                var p0 = pts[i - 1] || pts[i];
+                                var p1 = pts[i];
+                                var p2 = pts[i + 1];
+                                var p3 = pts[i + 2] || p2;
+                                var c1x = p1[0] + (p2[0] - p0[0]) / 6;
+                                var c1y = p1[1] + (p2[1] - p0[1]) / 6;
+                                var c2x = p2[0] - (p3[0] - p1[0]) / 6;
+                                var c2y = p2[1] - (p3[1] - p1[1]) / 6;
+                                d += ' C ' + c1x.toFixed(1) + ' ' + c1y.toFixed(1) + ', ' +
+                                     c2x.toFixed(1) + ' ' + c2y.toFixed(1) + ', ' +
+                                     p2[0].toFixed(1) + ' ' + p2[1].toFixed(1);
+                            }
+                            return d;
+                        }
+
+                        function addCurve(cls, delay) {
+                            var path = document.createElementNS(SVGNS, 'path');
+                            path.setAttribute('class', 'life-curve ' + cls);
+                            path.setAttribute('pathLength', '1');
+                            path.setAttribute('d', smoothPath(toPoints(makeLife())));
+                            path.style.animationDelay = delay + 's';
+                            svg.appendChild(path);
+                        }
+
+                        for (var i = 0; i < 11; i++) addCurve('bg', (i * 0.28).toFixed(2));
+                        addCurve('you', '3.2'); // drawn last, on top
+
+                        // Trigger the draw-in animation once the chart scrolls into view
+                        var fig = document.querySelector('.suffering-chart');
+                        if (fig && 'IntersectionObserver' in window) {
+                            var obs = new IntersectionObserver(function (entries) {
+                                entries.forEach(function (e) {
+                                    if (e.isIntersecting) {
+                                        fig.classList.add('in-view');
+                                        obs.disconnect();
+                                    }
+                                });
+                            }, { threshold: 0.35 });
+                            obs.observe(fig);
+                        } else if (fig) {
+                            fig.classList.add('in-view');
+                        }
+                    })();
+                </script>
+                <p>
+                    Hmmm... this sounds like a privileged statement, to say that the most wealthy, comfortable people can suffer comparably to those of underprivileged circumstances.
+                </p>
+                <p>
+                    Okay, valid. But this 30% of suffering considers the physical <span class="highlight">and</span> mental capacity.
+                </p>
+
+                <h2>Kim Kardashian and a man named Mike</h2>
+                <p>
+                    Kim Kardashian. Media portrays her rise to fame and wealth as one with ease — a 0-to-100 suffering-pleasure ratio. But take a night to watch early <em>Keep (which I highly recommend btw) and observe a mom pressure her young daughter to be on a porn magazine, and then try to make that case again. The media speculation and invasion of privacy are no short of mental suffering.
+                </p>
+                <p>
+                    A homeless man living on my street: Mike. Some may see Mike eating cheese Ruffles in the rain and conclude his life is purely suffering as he sits quietly observing people walk by — a 100-to-0 suffering-pleasure ratio. But when I speak to Mike, I hear his stories and hear how peaceful he is; how fun and carefree his younger years were. While he sits in physical discomfort now, Mike describes life in such simplicity that I do not doubt his mental comfort.
+                </p>
+                <p>
+                    When you consider suffering as what is experienced by the mind, not just as a physical state, suffering becomes universal — completely independent of economic status, geographical region, etc.
+                </p>
+                <p>
+                    This insight is absolutely essential for compassion. We are all suffering in our own bodies, regardless of how much we express it or those around us do. Understanding that we share a 30% of lifetime suffering brings us closer toward understanding each other and seeing unique human experiences with kindness and compassion. It further alleviates a constant necessity to express our frustration with our own suffering relative to someone else's.
+                </p>
+
+                <h2>Applying the 30%</h2>
+                <p>
+                    Let me paint a familiar, frustrating experience of being "out-done" in something as simple as a puzzle.
+                </p>
+                <p>
+                    Consider an identical set of puzzles presented to you and a friend. Your friend completes the first puzzle with ease, and you sit in confusion trying to solve it, further panicking at observing your friend's ease.
+                </p>
+                <p>
+                    While it feels instinctive to contemplate their lack of suffering (why does everything come so easily to them, why are they so gifted?!), this time you successfully recount the 30% rule:
+                </p>
+                <div class="agenda-block">
+                    (1) My friend's suffering is unobservable, and their experience cannot be simply understood as one of "ease" by comparison to mine.<br><br>
+                    (2) Should their experience be truly of ease, their 30% of challenges will exist in some way that mine won't — so it is of greater value to understand my 30% of challenges and then find focus on my 70% of ease.
+                </div>
+                <p>
+                    I believe we can find greater clarity, focus, and compassion once we settle on the 30% rule being the best insight into others' suffering that we can develop, and the best understanding of our own.
+                </p>
+
+                <p class="closing-note">
+                    We are all carrying our 30%. Be kind.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
