@@ -124,6 +124,64 @@
     margin-bottom: 0;
 }
 
+/* Recommendation Links */
+.story-recs {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed var(--line-color-strong);
+}
+
+.story-recs-label {
+    display: block;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.85rem;
+}
+
+.story-recs-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.story-rec-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.15rem;
+    background: var(--card-bg);
+    border: 1.5px solid var(--line-color-strong);
+    border-radius: 999px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-rec-btn svg {
+    flex-shrink: 0;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.story-rec-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .story-rec-btn:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.story-rec-btn:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 3px;
+}
+
 /* More Stories Section */
 .more-stories {
     padding-top: 3rem;
@@ -235,6 +293,11 @@
 
     .story-text {
         font-size: 1.15rem;
+    }
+
+    .story-rec-btn {
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
     }
 }
 
