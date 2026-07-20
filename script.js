@@ -378,7 +378,10 @@ document.addEventListener('visibilitychange', () => {
     });
 })();
 
-// Scroll Reveal Animation for Photos (waits for image to load)
+// Scroll Reveal Animation for Photos
+// The card (pin + shimmer placeholder) reveals as soon as it scrolls into
+// view, independent of the network — so slow connections show an elegant
+// loading placeholder instead of blank gaps or a sudden late pop-in.
 (function() {
     const photos = document.querySelectorAll('.photo-item');
     if (!photos.length) return;
@@ -387,26 +390,6 @@ document.addEventListener('visibilitychange', () => {
         root: null,
         rootMargin: '50px',
         threshold: 0.1
-    };
-
-    const revealWhenReady = (photoItem, delay) => {
-        const img = photoItem.querySelector('img');
-
-        const reveal = () => {
-            setTimeout(() => {
-                photoItem.classList.add('revealed');
-            }, delay);
-        };
-
-        // If image already loaded (cached), reveal immediately
-        if (img.complete && img.naturalHeight !== 0) {
-            reveal();
-        } else {
-            // Wait for image to load
-            img.addEventListener('load', reveal, { once: true });
-            // Fallback: reveal after timeout if load event doesn't fire
-            setTimeout(reveal, 3000);
-        }
     };
 
     const revealPhoto = (entries, observer) => {
@@ -419,7 +402,9 @@ document.addEventListener('visibilitychange', () => {
                 const staggerIndex = visibleItems.indexOf(entry.target);
                 const delay = Math.max(0, staggerIndex) * 80;
 
-                revealWhenReady(entry.target, delay);
+                setTimeout(() => {
+                    entry.target.classList.add('revealed');
+                }, delay);
                 observer.unobserve(entry.target);
             }
         });
@@ -429,6 +414,25 @@ document.addEventListener('visibilitychange', () => {
 
     photos.forEach(photo => {
         observer.observe(photo);
+    });
+})();
+
+// Photo Load Placeholders
+// Swaps each gallery image's shimmer skeleton for the real photo once it
+// has actually finished downloading (crossfades via CSS on .is-loaded).
+(function() {
+    const images = document.querySelectorAll('.photo-item img, .story-gallery-images img, .story-image img');
+    if (!images.length) return;
+
+    images.forEach((img) => {
+        const markLoaded = () => img.classList.add('is-loaded');
+
+        if (img.complete && img.naturalHeight !== 0) {
+            markLoaded();
+        } else {
+            img.addEventListener('load', markLoaded, { once: true });
+            img.addEventListener('error', markLoaded, { once: true });
+        }
     });
 })();
 

@@ -1175,10 +1175,25 @@ main {
     display: block;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(100deg, var(--card-bg) 8%, rgba(255, 255, 255, 0.35) 18%, var(--card-bg) 33%);
+    background-size: 200% 100%;
+    animation: img-shimmer 1.6s ease-in-out infinite;
+}
+
+.photo-item img.is-loaded {
+    animation: none;
+    background: none;
 }
 
 [data-theme="dark"] .photo-item img {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(100deg, var(--card-bg) 8%, rgba(255, 255, 255, 0.07) 18%, var(--card-bg) 33%);
+    background-size: 200% 100%;
+}
+
+@keyframes img-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }
 
 .photo-item:hover img {
@@ -1215,6 +1230,147 @@ main {
 .photo-item:focus {
     outline: 2px dashed var(--accent-color);
     outline-offset: 4px;
+}
+
+/* Recommendations CTA (Photography page) */
+.recs-cta-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 2rem 5rem;
+    text-align: center;
+}
+
+/* All Recommendations Section (Recommendations page) */
+.all-recs-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+}
+
+.recs-country {
+    margin-bottom: 1.5rem;
+}
+
+.recs-country-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    list-style: none;
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+    color: var(--text-color);
+    padding-bottom: 0.6rem;
+    border-bottom: 2px dashed var(--line-color-strong);
+    transition: color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.recs-country-title::-webkit-details-marker {
+    display: none;
+}
+
+.recs-country-title::marker {
+    content: '';
+}
+
+.recs-country-title::after {
+    content: '';
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--text-secondary);
+    border-bottom: 2px solid var(--text-secondary);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.recs-country[open] .recs-country-title::after {
+    transform: rotate(-135deg);
+}
+
+.recs-country-title:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 3px;
+}
+
+.recs-country-body {
+    padding-top: 1.25rem;
+}
+
+.recs-city {
+    margin-bottom: 1.35rem;
+}
+
+.recs-city:last-child {
+    margin-bottom: 0;
+}
+
+.recs-city-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.65rem;
+    padding-left: 0.25rem;
+    transition: color var(--transition-speed) ease;
+}
+
+.recs-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.rec-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.15rem;
+    background: var(--card-bg);
+    border: 1.5px solid var(--line-color-strong);
+    border-radius: 999px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rec-btn svg {
+    flex-shrink: 0;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.rec-btn-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.rec-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.rec-btn:hover .rec-btn-count {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .rec-btn:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.rec-btn:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 3px;
 }
 
 /* Featured Section */
@@ -1423,6 +1579,10 @@ main {
 
     .photography-section {
         padding: 3rem 1rem 4rem;
+    }
+
+    .all-recs-section {
+        padding: 2rem 1rem 4rem;
     }
 
     .shuffle-btn {

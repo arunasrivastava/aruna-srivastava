@@ -89,6 +89,19 @@
     max-height: 65vh;
     object-fit: contain;
     display: block;
+    background: linear-gradient(100deg, var(--card-bg) 8%, rgba(255, 255, 255, 0.35) 18%, var(--card-bg) 33%);
+    background-size: 200% 100%;
+    animation: img-shimmer 1.6s ease-in-out infinite;
+}
+
+.story-image img.is-loaded {
+    animation: none;
+    background: none;
+}
+
+[data-theme="dark"] .story-image img {
+    background: linear-gradient(100deg, var(--card-bg) 8%, rgba(255, 255, 255, 0.07) 18%, var(--card-bg) 33%);
+    background-size: 200% 100%;
 }
 
 .story-content {
@@ -429,11 +442,29 @@
     display: none;
     opacity: 0;
     transition: opacity 0.4s ease;
+    background: linear-gradient(100deg, var(--card-bg) 8%, rgba(255, 255, 255, 0.35) 18%, var(--card-bg) 33%);
+    background-size: 200% 100%;
+    animation: img-shimmer 1.6s ease-in-out infinite;
+}
+
+.story-gallery-images img.is-loaded {
+    animation: none;
+    background: none;
+}
+
+[data-theme="dark"] .story-gallery-images img {
+    background: linear-gradient(100deg, var(--card-bg) 8%, rgba(255, 255, 255, 0.07) 18%, var(--card-bg) 33%);
+    background-size: 200% 100%;
 }
 
 .story-gallery-images img.active {
     display: block;
     opacity: 1;
+}
+
+@keyframes img-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }
 
 .story-gallery-next {
