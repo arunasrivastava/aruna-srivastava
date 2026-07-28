@@ -541,7 +541,8 @@ main {
     transition: color var(--transition-speed) ease;
 }
 
-.cta a {
+.cta a,
+.description a {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: 600;
@@ -549,7 +550,8 @@ main {
     transition: color 0.3s ease;
 }
 
-.cta a::after {
+.cta a::after,
+.description a::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -562,11 +564,13 @@ main {
     transition: transform 0.3s ease;
 }
 
-.cta a:hover {
+.cta a:hover,
+.description a:hover {
     color: var(--accent-hover);
 }
 
-.cta a:hover::after {
+.cta a:hover::after,
+.description a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -600,31 +604,63 @@ main {
     animation-delay: 0.8s;
 }
 
-.fade-in .hero-photo-btn {
+.fade-in .btw-note {
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
     animation-delay: 1s;
 }
 
-.hero-photo-btn {
-    margin-top: 0.5rem;
+.location-note {
+    position: fixed;
+    left: 1.5rem;
+    bottom: 1.25rem;
+    z-index: 50;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    max-width: 240px;
 }
 
-.btw-note {
-    display: block;
-    font-size: clamp(1rem, 2.2vw, 1.2rem);
+.location-note-summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    list-style: none;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 0.9rem;
     color: var(--text-secondary);
-    margin-top: 1.5rem;
-    max-width: 550px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: color var(--transition-speed) ease;
+    transition: color 0.3s ease;
 }
 
-.fade-in .btw-note {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 1.2s;
+.location-note-summary::-webkit-details-marker {
+    display: none;
+}
+
+.location-note-summary::marker {
+    content: '';
+}
+
+.location-note-summary:hover,
+.location-note[open] .location-note-summary {
+    color: var(--accent-color);
+}
+
+.location-note-summary:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 3px;
+}
+
+.location-note-body {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .location-note {
+        max-width: 60vw;
+    }
 }
 
 @keyframes fadeInUp {
@@ -1624,7 +1660,8 @@ main {
 
 /* Focus styles for accessibility */
 .theme-toggle:focus,
-.cta a:focus {
+.cta a:focus,
+.description a:focus {
     outline: 2px dashed var(--accent-color);
     outline-offset: 4px;
 }
