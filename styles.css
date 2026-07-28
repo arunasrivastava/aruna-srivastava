@@ -604,12 +604,6 @@ main {
     animation-delay: 0.8s;
 }
 
-.fade-in .btw-note {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 1s;
-}
-
 .location-note {
     position: fixed;
     left: 1.5rem;
@@ -619,6 +613,9 @@ main {
     flex-direction: column-reverse;
     align-items: flex-start;
     max-width: 240px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 1s;
 }
 
 .location-note-summary {
@@ -655,6 +652,15 @@ main {
     font-size: 0.85rem;
     margin-bottom: 0.6rem;
     line-height: 1.5;
+    background: rgba(243, 241, 236, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+}
+
+[data-theme="dark"] .location-note-body {
+    background: rgba(22, 22, 22, 0.75);
 }
 
 @media (max-width: 600px) {
