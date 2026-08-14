@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Preference Modeling | Aruna's Stuff</title>
+
+    <!-- Social preview -->
+    <meta property="og:title" content="Personal Preference Modeling">
+    <meta property="og:description" content="on Donovan, chopsticks, and learning to want things on purpose">
+    <meta property="og:image" content="https://arunaaa.com/img/IMG_1751.webp">
+    <meta property="og:url" content="https://arunaaa.com/writing/personal-preference-modeling.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Globe emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+
+        .blog-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .blog-content {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content .definition-block {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .closing-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--text-muted);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-to-blog:hover {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 600px) {
+            .blog-article {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .blog-content {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header>
+        <nav>
+            <div class="nav-signature">
+                <a href="../index.html" class="nav-home-link">
+                    <span class="by-text">from:</span>
+                    <span class="signature-name">Aruna</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <article class="blog-article">
+            <a href="./" class="back-to-blog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to blog
+            </a>
+
+            <h1 class="blog-title">Personal Preference Modeling</h1>
+            <p class="blog-subtitle">on Donovan, chopsticks, and learning to want things on purpose</p>
+
+            <div class="blog-content">
+                <p>
+                    I had a roommate in college named Donovan who was the most particular individual I had ever met.
+                </p>
+                <p>
+                    He would eat Cheetos with CHOPSTICKS, one at a time, because he hated powdery fingers while he coded on his laptop; he would wrap the cord of his charger clockwise, secured with the velcro piece from the packaging that a normal person throws out; he would clip his cuticles with a special nail cutter on the bathroom floor every few days; and he would tweak any mundane task or item, from floss to socks, to his liking, leaving me stunned every day to observe his routine.
+                </p>
+                <p>
+                    For someone like me, who accepted most things at their default settings, Donovan's behavior stunned me.
+                </p>
+                <p>
+                    I remember the first day I met him, freshman year, lol.
+                </p>
+                <p>
+                    Donovan looked at my VSCode, saw the bright white nav bar on my screen, and immediately said, "That's a really fucked up setup, dude — doesn't that bother you?"
+                </p>
+                <p>
+                    I was baffled and responded, "Uhh, no?"
+                </p>
+                <p>
+                    He proceeded to run through different color schemes with me for ten minutes, asking which one I liked more. It had never crossed my mind before to change the color settings.
+                </p>
+                <p>
+                    The color we settled on was a dark lavender purple, and I realized my eye strain got better in the evenings. I hated that he was right.
+                </p>
+                <p>
+                    I thought I didn't care about such details, but really, I had just never considered my comfort too carefully. My coding IDE color scheme has changed every quarter since meeting Donovan.
+                </p>
+                <p>
+                    But Donovan changing my coding setup taught me something I've come to understand as personal preference modeling.
+                </p>
+                <div class="definition-block">
+                    Personal preference modeling: the ability to observe and prioritize your comfort and likes, such that you can refine daily tasks, objects, and goals to orient toward your own happiness.
+                </div>
+                <p>
+                    Donovan innately had a strong personal preference model, because he truly understood what he liked and how to quickly correct the things he disliked. But this is surprisingly non-trivial to learn — to actually learn what you like and dislike, to never settle for the discomfort of the default.
+                </p>
+                <p>
+                    It initially felt selfish to be unsatisfied with whatever default was presented to me. But personal preference modeling has less to do with complaining and more to do with believing your happiness and comfort are worthy of additional effort and time.
+                </p>
+                <p>
+                    Growing up with siblings, my parents could rarely tailor every experience and item to each of our liking, so requesting something "to my preference" would probably have gotten me a slap for acting spoiled.
+                </p>
+                <p>
+                    But now, as an adult, where acting on my preferences typically only requires an investment of my time and money, I've learned that my happiness is more than worth that investment.
+                </p>
+                <p>
+                    It starts with challenging small defaults. I learned that I like eating breakfast food midday instead of as my first meal, because breakfast food is my favorite snack. I learned that I like dark, quiet rooms decorated with warm lights instead of large, fluorescent-lit workspaces, because I like feeling cozy when I work. I learned that I like a small alarm clock on my desk instead of a loud iPhone alarm, because I like being off my phone when I wake up. I learned that I like taking meetings on walks instead of sitting still at a desk, because it improves the clarity of my thinking. I learned that I like web Instagram instead of the app, because the latency curbs my scroll addiction. Most of all, I learned that I like a lot of things that don't match the default — and that if it makes me feel better, it's worth changing the default.
+                </p>
+                <p>
+                    I believe most people live their lives without understanding personal preference modeling, because such optionality is a luxury beyond consideration.
+                </p>
+                <p>
+                    My father's Indian family comes from a culture where defaults are standards to instill, never to be challenged — from the partner you're given to marry to the education you're assumed to obtain. For a family living one generation after poverty, it's difficult to breathe into the space for choice when fear suffocates it.
+                </p>
+                <p>
+                    I see this as I work next to my colleague Sandeep, who sits for eight hours straight in his chair despite his back pain, while I watch my other colleague Chase move throughout the office — adjusting the height of his ergonomic desk regularly, leaving for a cafe midday to enjoy a change of scenery.
+                </p>
+                <p>
+                    Believing your comfort and happiness are worth changing for is difficult, but I don't think learning your personal preference model starts with some grand choice to go rogue and say "fuck the matrix" or whatever. I think it starts with the small things, like your laptop configuration and snack habits — realizing that in small, everyday tasks, you have choice and agency beyond your own imagination once you start thinking critically about what you like and dislike. Your happiness matters!
+                </p>
+                <p>
+                    I believe some of the most peculiar and specific individuals tend to be the most aware of their personal preferences, and can therefore choose bigger things — like career trajectories — with greater respect for what they truly like, irrespective of the defaults.
+                </p>
+                <p>
+                    I could be wrong. This could just be my justification for why my peculiar ways, inspired by Donovan, have become justifiable.
+                </p>
+                <p>
+                    But until I see otherwise, I like my weird desktop setups and specific routines that let me embrace peculiarity.
+                </p>
+
+                <p class="closing-note">
+                    So Donovan, if you're ever reading this: sorry for poking fun at how you did everything in college, lol. You just had your preference model down.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
