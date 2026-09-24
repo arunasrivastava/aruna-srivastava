@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vientiane, Laos | Aruna's Stories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header class="blog-header">
+        <nav>
+            <a href="../photography.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to gallery
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main class="blog-main">
+        <article class="story-article">
+            <div class="story-image">
+                <img src="../img/vientiane-patuxai.webp" alt="Patuxai, the Victory Gate monument in Vientiane, Laos, lit by evening sun over an empty boulevard" width="1333" height="2000" decoding="async">
+            </div>
+            <div class="story-content">
+                <div class="story-location">
+                    <span class="pin"></span>
+                    <h1>Vientiane, Laos</h1>
+                </div>
+                <p class="story-text">
+                    I arrived at the railway station in Vientiane and came to the marvelous realization that the city was still an hour's drive away. Tuk-tuk drivers saw me contemplating the route and leapt out of their seats to throw obscene prices at me. Thankfully, I remembered a rice farmer in Luang Prabang telling me about the local taxi app Laotians use. I pretended to have the app, Maxim, on my phone and asked the tuk-tuk driver to match the price. His original tourist price went from 800k to 150k ($6). I jumped into the tuk-tuk with some Chinese locals and a suspicious number of white packages, enjoying the sweet smell of a good bargain mixed with toxic air pollution on the ride into the city. I captured the beautiful Patuxai at sunset as we neared the city.
+                </p>
+                <div class="story-recs">
+                    <span class="story-recs-label">my Vientiane list</span>
+                    <div class="story-recs-links">
+                        <a href="https://maps.app.goo.gl/QNxdkSFVJFjRWNF49" class="story-rec-btn" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Laos - Vientiane
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <section class="more-stories">
+            <h2>more stories</h2>
+            <div class="stories-grid">
+                <a href="hanoi-temple-vietnam.html" class="story-card">
+                    <img src="../img/hanoi-temple.webp" alt="Hanoi" loading="lazy">
+                    <span class="story-card-location">Hanoi, Vietnam</span>
+                </a>
+                <a href="hanoi-night-market-vietnam.html" class="story-card">
+                    <img src="../img/hanoi-night-market.webp" alt="Hanoi" loading="lazy">
+                    <span class="story-card-location">Hanoi, Vietnam</span>
+                </a>
+                <a href="singapore.html" class="story-card">
+                    <img src="../img/singapore-lv.webp" alt="Singapore" loading="lazy">
+                    <span class="story-card-location">Singapore</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>

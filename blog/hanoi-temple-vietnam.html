@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanoi, Vietnam | Aruna's Stories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header class="blog-header">
+        <nav>
+            <a href="../photography.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to gallery
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main class="blog-main">
+        <article class="story-article">
+            <div class="story-image">
+                <img src="../img/hanoi-temple.webp" alt="A monk walking through an open temple doorway in Hanoi, sunlight streaming across the stone floor" width="1333" height="2000" decoding="async">
+            </div>
+            <div class="story-content">
+                <div class="story-location">
+                    <span class="pin"></span>
+                    <h1>Hanoi, Vietnam</h1>
+                </div>
+                <p class="story-text">
+                    We were wandering through the Old Quarter in Hanoi when we came across a small Buddhist monastery. The cold stone floors were pristine, and the Buddha statues were polished clean of fingerprints. The clean stairs and sparkling tiles seemed inherent to the temple, but I was reminded of the work behind it when the sun peeked through a doorway and illuminated a monk wiping the sweat from his forehead as he stepped out for a break from cleaning. Outcomes glow brighter than the work behind them, until that work is brought to light.
+                </p>
+                <div class="story-recs">
+                    <span class="story-recs-label">my Hanoi list</span>
+                    <div class="story-recs-links">
+                        <a href="https://maps.app.goo.gl/gb4k26vJcB17iZhQ9" class="story-rec-btn" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Vietnam - Hanoi
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <section class="more-stories">
+            <h2>more stories</h2>
+            <div class="stories-grid">
+                <a href="hanoi-night-market-vietnam.html" class="story-card">
+                    <img src="../img/hanoi-night-market.webp" alt="Hanoi" loading="lazy">
+                    <span class="story-card-location">Hanoi, Vietnam</span>
+                </a>
+                <a href="vientiane-laos.html" class="story-card">
+                    <img src="../img/vientiane-patuxai.webp" alt="Vientiane" loading="lazy">
+                    <span class="story-card-location">Vientiane, Laos</span>
+                </a>
+                <a href="singapore.html" class="story-card">
+                    <img src="../img/singapore-lv.webp" alt="Singapore" loading="lazy">
+                    <span class="story-card-location">Singapore</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>

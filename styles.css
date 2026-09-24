@@ -1432,6 +1432,14 @@ main {
     outline-offset: 3px;
 }
 
+.flag-emoji {
+    font-size: 0.9em;
+}
+
+.rec-btn-photo {
+    border-style: dashed;
+}
+
 /* Featured Section */
 .featured-section {
     width: 100%;
