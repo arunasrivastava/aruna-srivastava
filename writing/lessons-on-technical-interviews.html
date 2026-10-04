@@ -66,15 +66,84 @@
             display: inline-block;
         }
 
-        .blog-content .round-duration {
+        .interview-round {
+            border-bottom: 1px solid var(--line-color-strong);
+        }
+
+        .interview-round:first-of-type {
+            border-top: 1px solid var(--line-color-strong);
+            margin-top: 2rem;
+        }
+
+        .interview-round summary {
+            margin-left: 1.2rem;
+            padding: 1rem 0.25rem;
+            cursor: pointer;
+            line-height: 1.3;
+        }
+
+        .interview-round summary::marker {
+            color: var(--accent-color);
+            font-size: 1rem;
+        }
+
+        .interview-round summary:hover .round-title {
+            color: var(--text-color);
+        }
+
+        .interview-round summary:focus-visible {
+            outline: 2px dashed var(--accent-color);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .round-title {
+            font-family: 'Caveat', cursive;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .round-duration {
+            display: block;
+            margin-top: 0.25rem;
             color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .round-content {
+            padding: 0.5rem 0 1.5rem;
+        }
+
+        .rating-box {
+            border: 1px dashed var(--accent-color);
+            border-radius: 6px;
+            padding: 1rem 1.2rem;
             font-size: 1.1rem;
-            margin-bottom: 1rem;
+            line-height: 1.65;
+        }
+
+        .rating-box p:last-child {
+            margin-bottom: 0;
         }
 
         .blog-content .technical-rating {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.25rem 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .rating-score {
+            font-family: 'Caveat', cursive;
+            font-size: 1.7rem;
+            font-weight: 600;
+            line-height: 1.2;
             color: var(--accent-color);
-            margin-bottom: 0.5rem;
+            white-space: nowrap;
         }
 
         .closing-note {
@@ -183,66 +252,106 @@
                     I'll walk through the interview process I experienced for a safety research fellowship, then share my thoughts on how each round reflects technical ability. In MY OPINION, of course.
                 </p>
 
-                <h2>Round 1: Technical Assessment</h2>
-                <p class="round-duration">60 minutes</p>
-                <p>
-                    After the initial application screening (resume + three sections of writing), they sent me a technical assessment through CodeSignal. This was pretty far from a LeetCode assessment. Instead, they gave me instructions to write helper functions for an internet protocol in six steps.
-                </p>
-                <p>
-                    It took around 20 minutes to read the existing code and tests, then 40 minutes to write helper functions as they added complexity to the protocol at each step. It was lowkey hilarious how long the instructions were, considering that each of the first two helper functions could be finished in under five lines of code. The most complex data structure I needed was an array.
-                </p>
-                <p class="technical-rating"><strong>Technical applicability rating: 8/10</strong></p>
-                <p>
-                    <strong>Human vs. LLM:</strong> LLMs can heavily overengineer problems. Seeing how you simplify a problem and synthesize long instructions into code under a time constraint is a fair reflection of your technical skills. Will this remain important with LLMs? Probably not. LLM context windows will get better than what humans can manage, and I expect the models to eventually learn to write concise, less overengineered code.
-                </p>
+                <details class="interview-round">
+                    <summary>
+                        <span class="round-title">Round 1: Technical Assessment</span>
+                        <span class="round-duration">60 minutes</span>
+                    </summary>
+                    <div class="round-content">
+                        <p>
+                            After the initial application screening (resume + three sections of writing), they sent me a technical assessment through CodeSignal. This was pretty far from a LeetCode assessment. Instead, they gave me instructions to write helper functions for an internet protocol in six steps.
+                        </p>
+                        <p>
+                            It took around 20 minutes to read the existing code and tests, then 40 minutes to write helper functions as they added complexity to the protocol at each step. It was lowkey hilarious how long the instructions were, considering that each of the first two helper functions could be finished in under five lines of code. The most complex data structure I needed was an array.
+                        </p>
+                        <div class="rating-box">
+                            <p class="technical-rating"><span>Technical applicability rating:</span> <span class="rating-score">8/10</span></p>
+                            <p>
+                                <strong>Human vs. LLM:</strong> LLMs can heavily overengineer problems. Seeing how you simplify a problem and synthesize long instructions into code under a time constraint is a fair reflection of your technical skills. Will this remain important with LLMs? Probably not. LLM context windows will get better than what humans can manage, and I expect the models to eventually learn to write concise, less overengineered code.
+                            </p>
+                        </div>
+                    </div>
+                </details>
 
-                <h2>Round 2: Debugging</h2>
-                <p class="round-duration">90 minutes</p>
-                <p>
-                    This shit was lowkey cooked. CodeSignal gave me a few files of code that used a recursive tree, with six failing tests. I was allowed to set breakpoints and debug with pdb++. Like before, you could simply read several of the failing tests and see that the fix was only a few lines. I think I only resolved half of them. Very difficult assessment.
-                </p>
-                <p class="technical-rating"><strong>Technical applicability rating: 9/10</strong></p>
-                <p>
-                    Debugging is something I noticed I became WAY better at as I coded more. My ability to read and fix code grew far more than my ability to just write it. Explaining a failure to a person is likely more useful than just being able to resolve it, so making this a human interview rather than an automated one would better highlight a kind of technical ability that's really valuable.
-                </p>
+                <details class="interview-round">
+                    <summary>
+                        <span class="round-title">Round 2: Debugging</span>
+                        <span class="round-duration">90 minutes</span>
+                    </summary>
+                    <div class="round-content">
+                        <p>
+                            This shit was lowkey cooked. CodeSignal gave me a few files of code that used a recursive tree, with six failing tests. I was allowed to set breakpoints and debug with pdb++. Like before, you could simply read several of the failing tests and see that the fix was only a few lines. I think I only resolved half of them. Very difficult assessment.
+                        </p>
+                        <div class="rating-box">
+                            <p class="technical-rating"><span>Technical applicability rating:</span> <span class="rating-score">9/10</span></p>
+                            <p>
+                                Debugging is something I noticed I became WAY better at as I coded more. My ability to read and fix code grew far more than my ability to just write it. Explaining a failure to a person is likely more useful than just being able to resolve it, so making this a human interview rather than an automated one would better highlight a kind of technical ability that's really valuable.
+                            </p>
+                        </div>
+                    </div>
+                </details>
 
-                <h2>Round 3: Reference Letter Stuff</h2>
-                <p>
-                    Three of the PhD advisors I had in undergrad wrote my letters. They had to write about my research intentions and how I compared to people they'd worked with before at similar companies or labs.
-                </p>
-                <p class="technical-rating"><strong>Technical applicability rating: 6.5/10</strong></p>
-                <p>
-                    It's kind of easy to write a generic letter of rec about someone's technical ability, but I can see why an outside opinion on what a person is like to work with matters. Especially for insight into whether the position aligns with the candidate's experience.
-                </p>
+                <details class="interview-round">
+                    <summary>
+                        <span class="round-title">Round 3: Reference Letter Stuff</span>
+                    </summary>
+                    <div class="round-content">
+                        <p>
+                            Three of the PhD advisors I had in undergrad wrote my letters. They had to write about my research intentions and how I compared to people they'd worked with before at similar companies or labs.
+                        </p>
+                        <div class="rating-box">
+                            <p class="technical-rating"><span>Technical applicability rating:</span> <span class="rating-score">6.5/10</span></p>
+                            <p>
+                                It's kind of easy to write a generic letter of rec about someone's technical ability, but I can see why an outside opinion on what a person is like to work with matters. Especially for insight into whether the position aligns with the candidate's experience.
+                            </p>
+                        </div>
+                    </div>
+                </details>
 
-                <h2>Round 4: Take-Home</h2>
-                <p class="round-duration">5 hours</p>
-                <p>
-                    The task was to use an LLM of your choice to build on one of their prior research pieces, providing good statistical evidence, tests, and clear visualizations. I literally just wrote some hypotheses, set up multiple agents to talk with each other, and spent $80 on Claude Pro Max. Then I went through the results and made visuals that made sense.
-                </p>
-                <p>
-                    One tricky thing: they'd added bugs to the code, like putting the test set in the training code. That's hard to catch unless you do a code quality check first.
-                </p>
-                <p class="technical-rating"><strong>Technical applicability rating: 6/10</strong></p>
-                <p>
-                    I can see this creating a lot of inequities for people who can't afford expensive LLMs and GPUs. In the future, those resources need to be held constant across candidates. But testing what assumptions you do and don't make about an LLM's capabilities gives useful insight into a candidate.
-                </p>
+                <details class="interview-round">
+                    <summary>
+                        <span class="round-title">Round 4: Take-Home</span>
+                        <span class="round-duration">5 hours</span>
+                    </summary>
+                    <div class="round-content">
+                        <p>
+                            The task was to use an LLM of your choice to build on one of their prior research pieces, providing good statistical evidence, tests, and clear visualizations. I literally just wrote some hypotheses, set up multiple agents to talk with each other, and spent $80 on Claude Pro Max. Then I went through the results and made visuals that made sense.
+                        </p>
+                        <p>
+                            One tricky thing: they'd added bugs to the code, like putting the test set in the training code. That's hard to catch unless you do a code quality check first.
+                        </p>
+                        <div class="rating-box">
+                            <p class="technical-rating"><span>Technical applicability rating:</span> <span class="rating-score">6/10</span></p>
+                            <p>
+                                I can see this creating a lot of inequities for people who can't afford expensive LLMs and GPUs. In the future, those resources need to be held constant across candidates. But testing what assumptions you do and don't make about an LLM's capabilities gives useful insight into a candidate.
+                            </p>
+                        </div>
+                    </div>
+                </details>
 
-                <h2>Round 5: Final Rapid Research Interview</h2>
-                <p class="round-duration">15 minutes</p>
-                <p>
-                    Up until this point, I wasn't sure if this was even a real Anthropic interview because Constellation was sending the assessment emails. However, this part actually had a human to talk to who was on the Anthropic research team.
-                </p>
-                <p>
-                    They would present a problem, like safety testing black-box models, and ask for my approach while adding constraints. The interview was only 15 minutes, but there were two research problems to walk through.
-                </p>
-                <p>
-                    I highly recommend listening to the Anthropic research problem podcast discussions to prep for these.
-                </p>
-                <p class="technical-rating"><strong>Technical applicability rating: 9.3/10</strong></p>
-                <p>
-                    I could immediately see how two years of going back and forth over research ideas had prepared me to ask the right questions in this interview. Although I definitely struggled with the time constraint, this felt useful for finding candidates who could explain their thought process through a technical topic.
-                </p>
+                <details class="interview-round">
+                    <summary>
+                        <span class="round-title">Round 5: Final Rapid Research Interview</span>
+                        <span class="round-duration">15 minutes</span>
+                    </summary>
+                    <div class="round-content">
+                        <p>
+                            Up until this point, I wasn't sure if this was even a real Anthropic interview because Constellation was sending the assessment emails. However, this part actually had a human to talk to who was on the Anthropic research team.
+                        </p>
+                        <p>
+                            They would present a problem, like safety testing black-box models, and ask for my approach while adding constraints. The interview was only 15 minutes, but there were two research problems to walk through.
+                        </p>
+                        <p>
+                            I highly recommend listening to the Anthropic research problem podcast discussions to prep for these.
+                        </p>
+                        <div class="rating-box">
+                            <p class="technical-rating"><span>Technical applicability rating:</span> <span class="rating-score">9.3/10</span></p>
+                            <p>
+                                I could immediately see how two years of going back and forth over research ideas had prepared me to ask the right questions in this interview. Although I definitely struggled with the time constraint, this felt useful for finding candidates who could explain their thought process through a technical topic.
+                            </p>
+                        </div>
+                    </div>
+                </details>
 
                 <h2>Takeaways</h2>
                 <p>
