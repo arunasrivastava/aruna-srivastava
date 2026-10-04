@@ -35,6 +35,41 @@
             border-color: var(--accent-color);
             box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
+        .blog-post-card[hidden],
+        .blog-filters[hidden] {
+            display: none;
+        }
+        .blog-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        .blog-filter {
+            min-height: 44px;
+            padding: 0.4rem 0.85rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 6px;
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1rem;
+            line-height: 1.3;
+            cursor: pointer;
+        }
+        .blog-filter:hover {
+            border-color: var(--accent-color);
+            color: var(--text-color);
+        }
+        .blog-filter[aria-pressed="true"] {
+            background: var(--line-color);
+            border-color: var(--accent-color);
+            color: var(--text-color);
+        }
+        .blog-filter:focus-visible {
+            outline: 2px dashed var(--accent-color);
+            outline-offset: 3px;
+        }
         .post-preview {
             display: flex;
             align-items: center;
@@ -63,9 +98,25 @@
             font-size: 1rem;
             color: var(--text-muted);
         }
+        .post-tag {
+            display: inline-block;
+            margin-top: 0.85rem;
+            padding: 0.2rem 0.6rem;
+            border: 1px dashed var(--text-muted);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+        .post-tag--tech {
+            border: 1px solid var(--accent-color);
+            background: var(--line-color);
+            color: var(--text-color);
+        }
         .blog-posts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
@@ -120,68 +171,91 @@
             <h1 class="page-title">Blog</h1>
             <p class="page-subtitle">Thoughts, ideas, and stories...</p>
 
-            <div class="blog-posts-grid">
-                <a href="personal-preference-modeling.html" class="blog-post-card">
+            <div class="blog-filters" role="group" aria-label="Filter posts by category" hidden>
+                <button type="button" class="blog-filter" data-filter="all" aria-pressed="true" aria-controls="blogPosts">All</button>
+                <button type="button" class="blog-filter" data-filter="philospher-aruna" aria-pressed="false" aria-controls="blogPosts">philospher-aruna</button>
+                <button type="button" class="blog-filter" data-filter="tech" aria-pressed="false" aria-controls="blogPosts">tech</button>
+            </div>
+
+            <div class="blog-posts-grid" id="blogPosts">
+                <a href="lessons-on-technical-interviews.html" class="blog-post-card" data-category="tech">
+                    <div class="post-preview">
+                        <span class="post-number">#8</span>
+                    </div>
+                    <div class="post-info">
+                        <h2 class="post-title">Lessons on Technical Interviews</h2>
+                        <p class="post-excerpt">what five rounds taught me</p>
+                        <span class="post-tag post-tag--tech">tech</span>
+                    </div>
+                </a>
+                <a href="personal-preference-modeling.html" class="blog-post-card" data-category="philospher-aruna">
                     <div class="post-preview">
                         <span class="post-number">#7</span>
                     </div>
                     <div class="post-info">
                         <h2 class="post-title">Personal Preference Modeling</h2>
                         <p class="post-excerpt">permission to be picky</p>
+                        <span class="post-tag">philospher-aruna</span>
                     </div>
                 </a>
-                <a href="two-cents-to-twenty.html" class="blog-post-card">
+                <a href="two-cents-to-twenty.html" class="blog-post-card" data-category="philospher-aruna">
                     <div class="post-preview">
                         <span class="post-number">#6</span>
                     </div>
                     <div class="post-info">
                         <h2 class="post-title">2 Cents to 20</h2>
                         <p class="post-excerpt">advice on advice lol</p>
+                        <span class="post-tag">philospher-aruna</span>
                     </div>
                 </a>
-                <a href="the-30-percent-rule.html" class="blog-post-card">
+                <a href="localized-happiness.html" class="blog-post-card" data-category="philospher-aruna">
                     <div class="post-preview">
                         <span class="post-number">#5</span>
                     </div>
                     <div class="post-info">
-                        <h2 class="post-title">The 30% Rule</h2>
-                        <p class="post-excerpt">we are all going thru it</p>
+                        <h2 class="post-title">Localized Happiness</h2>
+                        <p class="post-excerpt">contentment is closer than you think</p>
+                        <span class="post-tag">philospher-aruna</span>
                     </div>
                 </a>
-                <a href="complaint-cocaine.html" class="blog-post-card">
+                <a href="complaint-cocaine.html" class="blog-post-card" data-category="philospher-aruna">
                     <div class="post-preview">
                         <span class="post-number">#4</span>
                     </div>
                     <div class="post-info">
                         <h2 class="post-title">Complaint Cocaine</h2>
                         <p class="post-excerpt">stop snorting it</p>
+                        <span class="post-tag">philospher-aruna</span>
                     </div>
                 </a>
-                <a href="what-it-means-to-be-the-only-woman.html" class="blog-post-card">
+                <a href="what-it-means-to-be-the-only-woman.html" class="blog-post-card" data-category="philospher-aruna">
                     <div class="post-preview">
                         <span class="post-number">#3</span>
                     </div>
                     <div class="post-info">
                         <h2 class="post-title">What It Means to Be the Only Woman</h2>
                         <p class="post-excerpt">Finding perspective when you're the minority in the room</p>
+                        <span class="post-tag">philospher-aruna</span>
                     </div>
                 </a>
-                <a href="the-self-that-sharpens.html" class="blog-post-card">
+                <a href="the-self-that-sharpens.html" class="blog-post-card" data-category="philospher-aruna">
                     <div class="post-preview">
                         <span class="post-number">#2</span>
                     </div>
                     <div class="post-info">
                         <h2 class="post-title">The Self that Sharpens</h2>
                         <p class="post-excerpt">For those struggling with a critical figure</p>
+                        <span class="post-tag">philospher-aruna</span>
                     </div>
                 </a>
-                <a href="multifaceted-multifaulted.html" class="blog-post-card">
+                <a href="multifaceted-multifaulted.html" class="blog-post-card" data-category="philospher-aruna">
                     <div class="post-preview">
                         <span class="post-number">#1</span>
                     </div>
                     <div class="post-info">
                         <h2 class="post-title">My Multifaceted, Multi-Faulted Personal Site</h2>
                         <p class="post-excerpt">Why I choose to pursue a beautiful pile of 3/4s</p>
+                        <span class="post-tag">philospher-aruna</span>
                     </div>
                 </a>
             </div>
@@ -189,5 +263,26 @@
     </main>
 
     <script src="../script.js"></script>
+    <script>
+        (function() {
+            const filters = document.querySelector('.blog-filters');
+            const buttons = filters.querySelectorAll('.blog-filter');
+            const posts = document.querySelectorAll('#blogPosts .blog-post-card');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.dataset.filter;
+                    buttons.forEach(filter => {
+                        filter.setAttribute('aria-pressed', String(filter === button));
+                    });
+                    posts.forEach(post => {
+                        post.hidden = category !== 'all' && post.dataset.category !== category;
+                    });
+                });
+            });
+
+            filters.hidden = false;
+        })();
+    </script>
 </body>
 </html>

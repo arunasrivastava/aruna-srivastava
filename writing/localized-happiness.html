@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localized Happiness | Aruna's Stuff</title>
+
+    <!-- Social preview -->
+    <meta property="og:title" content="Localized Happiness">
+    <meta property="og:description" content="contentment is closer than you think">
+    <meta property="og:image" content="https://arunaaa.com/img/IMG_1751.webp">
+    <meta property="og:url" content="https://arunaaa.com/writing/localized-happiness.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Globe emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+
+        .blog-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .blog-content {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px dashed var(--accent-color);
+            display: inline-block;
+        }
+
+        .closing-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--text-muted);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .happiness-figure {
+            margin: 2rem 0;
+        }
+
+        .happiness-rings {
+            position: relative;
+            width: min(100%, 420px);
+            aspect-ratio: 1;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.2;
+        }
+
+        .happiness-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            aspect-ratio: 1;
+            border-radius: 49% 51% 50% 48%;
+        }
+
+        .happiness-ring--path {
+            width: 96%;
+            border: 1px dashed var(--text-muted);
+        }
+
+        .happiness-ring--institution {
+            width: 70%;
+            border: 1px solid var(--text-muted);
+        }
+
+        .happiness-ring--local {
+            width: 42%;
+            border: 2px solid var(--accent-color);
+            background: var(--line-color);
+        }
+
+        .happiness-label {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            color: var(--text-secondary);
+        }
+
+        .happiness-label--path {
+            top: 8%;
+        }
+
+        .happiness-label--institution {
+            top: 22%;
+        }
+
+        .happiness-label--you {
+            top: 40%;
+            color: var(--text-color);
+        }
+
+        .happiness-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: var(--text-color);
+        }
+
+        .happiness-label--local {
+            top: 53%;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .happiness-figure figcaption {
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+            text-align: center;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-to-blog:hover {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 600px) {
+            .blog-article {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .blog-content {
+                font-size: 1.15rem;
+            }
+
+            .happiness-label--local {
+                font-size: 1.1rem;
+                line-height: 1.05;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header>
+        <nav>
+            <div class="nav-signature">
+                <a href="../index.html" class="nav-home-link">
+                    <span class="by-text">from:</span>
+                    <span class="signature-name">Aruna</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <article class="blog-article">
+            <a href="./" class="back-to-blog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to blog
+            </a>
+
+            <h1 class="blog-title">Localized Happiness</h1>
+            <p class="blog-subtitle">contentment is closer than you think</p>
+
+            <div class="blog-content">
+                <p>
+                    As I neared graduation, I felt myself caught on a pendulum of panic, swinging back and forth between the pros and cons of every career trajectory and academic pathway. Would I be less miserable at a large company or a small one? Master's or PhD? Industry or academia? Machine learning or software?
+                </p>
+                <p>
+                    Underlying my panic was a belief that happiness might exist in one path but not another. But this past year, I learned that neither happiness nor success exists at the macro level we often scrutinize. Rather, happiness is a series of daily habits, interactions, and communities at a micro level that can exist anywhere.
+                </p>
+                <p>
+                    After listening to PhD students rant about their hatred toward industry and industry SWEs reflect on their misery in academia, I did the most reasonable thing a person could do: I participated in academia and industry simultaneously (um, do not do this; this is not life advice). To my great surprise, happiness exists in abundance in both of these distinct settings, through surprisingly universal daily habits.
+                </p>
+
+                <h2>Industry</h2>
+                <p>
+                    When I took a full-time offer in industry, the debates in academia prepared me to hate the work before I even got there. So many of my friends said industry was terrible, so why should my experience be any different?
+                </p>
+                <p>
+                    But when my co-workers Poojan and Chase and I started spending Wednesdays searching buildings for the best massage chairs and Thursdays getting free afternoon cookies, I realized that I had found contentment in industry. Life felt balanced, my co-workers valued me, and I had time outside of work. It scared me to have found such a level of contentment despite not caring for the work.
+                </p>
+                <p>
+                    My AI agent went rogue on my laptop while I spent mornings getting coffee with my desk-mate and talking about our current TV show obsessions and recent travels. Work discussed during team meetings was unimportant in the grand scheme of the company, but my contributions were treated as critical and significant by my co-workers because that was just the culture of the team.
+                </p>
+                <p>
+                    While I eventually did leave the job for Koel, I realized that feeling valued and fulfilled at work was not because I chose an amazing company or industry. It was much more granular than that. The people who made up my team, with whom I shared lunches and discussions, were a much greater determinant of the positive experience I had. Leaving work before 3 meant I had plenty of time for hobbies and never resented the time I needed to "work." Small daily exchanges and habits at the company formed my micro-economy of happiness.
+                </p>
+
+                <h2>Academia</h2>
+                <p>
+                    My time navigating academia was less straightforward. When I started research in my second year of undergrad, I hated it. I was deeply disappointed that my advisor was so critical and constantly pivoted our research topic. The research felt like weekly homework: experiments assigned to me that often fell flat. Expecting to love research, I was disappointed that academia wasn't the utopia my PhD friends had described.
+                </p>
+                <p>
+                    Still, I insisted on finishing a publication, even though I had already started working in industry. That fall, my advisor added two other postdocs to assist with the work. I doubted that they would help the project move along until I met one of them.
+                </p>
+                <p>
+                    One postdoc's name was Lily. She was the most passionate and excited researcher I had ever met. From the moment we hopped on the Zoom call, she fired off questions. The way Lily asked questions was different. They pushed me to direct the research myself, outlining my own experiments and tests rather than simply completing what my advisors recommended. I felt excited by the agency I suddenly found in research and completed as many experiments in one month as my previous advisor and I had completed in 14 months.
+                </p>
+                <p>
+                    I suddenly fell in love with research, but what had really changed here? Some may say it was simply the advisor, but upon closer inspection, it was how I interacted with my advisor. My former advisor dictated work that often made me resent it, while Lily helped guide me to outline it myself, encouraging me to trust my own abilities. My former advisor would take 3-5 business days to answer my questions, while Lily proactively spammed me on Slack with hilarious memes and suggestions. We met for coffee and spoke like friends, which made academic work feel like an exploratory playground.
+                </p>
+
+                <h2>Localized Happiness</h2>
+                <p>
+                    Reflecting on these two distinct workplaces, I realized that happiness does not live at an organizational or institutional level. It is not exclusive to a particular path or project.
+                </p>
+                <p>
+                    Instead, I found that happiness is built at an extremely intimate level within the small circle of people we interact with every day. Institutional policies may shape a small portion of our experience, but a greater portion is shaped by the circle of people we opt to be around.
+                </p>
+
+                <figure class="happiness-figure">
+                    <div class="happiness-rings" role="img" aria-label="Three rings surround a dot representing you. The smallest ring represents localized happiness: daily people, habits, and interactions. The larger rings represent your company or school and your career path.">
+                        <span class="happiness-ring happiness-ring--path" aria-hidden="true"></span>
+                        <span class="happiness-ring happiness-ring--institution" aria-hidden="true"></span>
+                        <span class="happiness-ring happiness-ring--local" aria-hidden="true"></span>
+                        <span class="happiness-label happiness-label--path" aria-hidden="true">career path</span>
+                        <span class="happiness-label happiness-label--institution" aria-hidden="true">company / school</span>
+                        <span class="happiness-label happiness-label--you" aria-hidden="true">you</span>
+                        <span class="happiness-dot" aria-hidden="true"></span>
+                        <span class="happiness-label happiness-label--local" aria-hidden="true">localized<br>happiness</span>
+                    </div>
+                    <figcaption>Your daily people, habits, and interactions.</figcaption>
+                </figure>
+
+                <p>
+                    This is why I am skeptical when sweeping generalizations about a company or school are made. When a person says "industry sucks," the experience they are describing is far more specific than that. It would be more accurate to specify the place, time, people, and culture that formed a negative experience.
+                </p>
+                <p>
+                    I think the best part of my revelation was that you do not need a drastic life shift to find the contentment that might feel far away. You can change teams within the company, change advisors within the school, move desks, swap work shifts, find a coffee gossip buddy, etc.
+                </p>
+
+                <p class="closing-note">
+                    Our happiness is a little town of people rather than a vast country or continent. Local happiness is right in your neighborhood!
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
