@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../styles.css">
     <style>
         .blog-post-card {
+            position: relative;
             display: block;
             background: var(--card-bg);
             border-radius: 12px;
@@ -99,14 +100,15 @@
             color: var(--text-muted);
         }
         .post-tag {
-            display: inline-block;
-            margin-top: 0.85rem;
-            padding: 0.2rem 0.6rem;
+            position: absolute;
+            top: 0.65rem;
+            right: 0.65rem;
+            padding: 0.1rem 0.4rem;
             border: 1px dashed var(--text-muted);
-            border-radius: 6px;
+            border-radius: 4px;
             color: var(--text-secondary);
             font-family: 'Patrick Hand', cursive;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             line-height: 1.3;
         }
         .post-tag--tech {
