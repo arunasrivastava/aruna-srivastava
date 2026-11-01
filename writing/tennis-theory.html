@@ -21,7 +21,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <style>
+        .tennis-main {
+            padding: 0;
+        }
+
         .blog-article {
+            width: 100%;
+            min-width: 0;
             max-width: 720px;
             margin: 0 auto;
             padding: 6rem 1.5rem 4rem;
@@ -49,6 +55,7 @@
             font-size: 1.25rem;
             line-height: 1.8;
             color: var(--text-color);
+            overflow-wrap: anywhere;
         }
 
         .blog-content p {
@@ -139,8 +146,11 @@
         }
 
         .chart-viewport {
+            max-width: 100%;
             overflow-x: auto;
             overscroll-behavior-x: contain;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-color) var(--line-color);
         }
 
         .chart-viewport:focus-visible {
@@ -247,7 +257,7 @@
 
         @media (max-width: 600px) {
             .blog-article {
-                padding: 1.5rem 1rem 3rem;
+                padding: 6.5rem 1rem 3rem;
             }
 
             .blog-title {
@@ -256,6 +266,19 @@
 
             .blog-content {
                 font-size: 1.15rem;
+            }
+
+            .lesson-list {
+                padding-left: 2rem;
+            }
+
+            .lesson-list > li {
+                padding-top: 0.75rem;
+                padding-bottom: 0.75rem;
+            }
+
+            .lesson-list ul {
+                padding-left: 1rem;
             }
         }
     </style>
@@ -304,7 +327,7 @@
         </nav>
     </div>
 
-    <main>
+    <main class="tennis-main">
         <article class="blog-article">
             <a href="./" class="back-to-blog">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
