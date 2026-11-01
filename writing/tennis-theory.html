@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Theory | Aruna's Stuff</title>
+
+    <!-- Social preview -->
+    <meta property="og:title" content="Tennis Theory">
+    <meta property="og:description" content="experience isn't everything">
+    <meta property="og:image" content="https://arunaaa.com/img/IMG_1751.webp">
+    <meta property="og:url" content="https://arunaaa.com/writing/tennis-theory.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Globe emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Zen+Kurenaido&family=ZCOOL+XiaoWei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+
+        .blog-title {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .blog-content {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px dashed var(--accent-color);
+            display: inline-block;
+        }
+
+        .blog-content ol {
+            padding-left: 1.5rem;
+            margin: 0 0 1.5rem;
+        }
+
+        .blog-content li {
+            padding-left: 0.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .learning-chart {
+            margin: 2.5rem 0;
+        }
+
+        .chart-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .chart-legend span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chart-legend span::before {
+            content: '';
+            width: 1.5rem;
+            border-top: 2px dashed var(--text-muted);
+        }
+
+        .chart-legend .actual-key::before {
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .learning-chart svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .chart-axis {
+            fill: none;
+            stroke: var(--text-muted);
+            stroke-width: 1.5;
+        }
+
+        .chart-grid {
+            stroke: var(--line-color);
+            stroke-width: 1;
+        }
+
+        .expected-progress {
+            fill: none;
+            stroke: var(--text-muted);
+            stroke-width: 2;
+            stroke-dasharray: 7 7;
+        }
+
+        .actual-progress {
+            fill: none;
+            stroke: var(--accent-color);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vector-effect: non-scaling-stroke;
+        }
+
+        .chart-label {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 24px;
+            fill: var(--text-secondary);
+        }
+
+        .chart-annotation {
+            font-family: 'Caveat', cursive;
+            font-size: 28px;
+            fill: var(--text-color);
+        }
+
+        .learning-chart figcaption {
+            margin-top: 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .acknowledgment {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .closing-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--text-muted);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-to-blog:hover {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 600px) {
+            .blog-article {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .blog-title {
+                font-size: 2.2rem;
+            }
+
+            .blog-content {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graph-paper"></div>
+
+    <header>
+        <nav>
+            <div class="nav-signature">
+                <a href="../index.html" class="nav-home-link">
+                    <span class="by-text">from:</span>
+                    <span class="signature-name">Aruna</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav class="menu-content">
+            <a href="../photography.html" class="menu-link">Photography</a>
+            <a href="../writing/" class="menu-link">Blog</a>
+            <a href="../research.html" class="menu-link">Research</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-label">Theme</span>
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <article class="blog-article">
+            <a href="./" class="back-to-blog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                back to blog
+            </a>
+
+            <h1 class="blog-title">Tennis Theory</h1>
+            <p class="blog-subtitle">experience isn't everything</p>
+
+            <div class="blog-content">
+                <p>
+                    From elementary school, my sisters and I would attend summer tennis camps and casually play on our school teams. From 12 until 19, I played on and off during summers. In college, I told my friend Alek I had been playing since I was 12, and he quickly invited me to our school's rec club.
+                </p>
+                <p>
+                    I happily joined that evening for what seemed like a casual game of king of the court. Simple 1v1, where the king has to lose two points consecutively to be dethroned.
+                </p>
+                <p>
+                    While we all lined up to challenge the king, I met Alek's friend Julien, who was waiting in line ahead of me. Julien said he had started playing just a year ago during COVID. I thought it was nice that the club had beginners too.
+                </p>
+                <p>
+                    But then Julien took the court. He won the two points with two drop shots without moving from the baseline and casually took the king's place.
+                </p>
+                <p>
+                    Julien fed me the ball and then proceeded to add backspin so that I sent my neon ball flying over the gate. I was in a state of shock: Wtf is this, how is this rec tennis? Julien had to be trolling about his single year of experience.
+                </p>
+                <p>
+                    If he was telling the truth, starting a skill seven years earlier than Julien meant I should be at a comparable level at the very least.
+                </p>
+                <p>
+                    But no. Julien was telling the truth, and I was getting absolutely cooked by a student who had only recently picked up tennis. The humiliation of playing against Julien became a ritual when I joined the club.
+                </p>
+
+                <h2>Julien's Fixation</h2>
+                <p>
+                    After practice, I would join some friends in the group for late-night snacks at JustBurgers. I strategically used this time to interrogate Julien about how he actually learned. He said it was just YouTube tutorials and a friend he had played with every day during COVID for the past year. He said he really loved tennis and had suddenly lost 15 pounds from playing so regularly.
+                </p>
+                <p>
+                    It struck me that I had never reached this level of intensity in my practice. While I started at a younger age, tennis was a summer pastime with friends and far more seasonal than Julien's one year of daily practice.
+                </p>
+                <p>
+                    I realized there were two features to Julien's incredible leap to being a tennis prodigy:
+                </p>
+                <ol>
+                    <li><strong>Fixation:</strong> Julien loved tennis and was able to concentrate his efforts on it over a one-year period with incredible consistency.</li>
+                    <li><strong>Mentorship:</strong> Julien recognized that his form needed practice and found YouTube videos and friends who would give him the feedback he needed to actually improve on his weaknesses over that year.</li>
+                </ol>
+                <p>
+                    I lacked consistency and form.
+                </p>
+                <p>
+                    Luckily, these are both addressed by the universal quality of humility.
+                </p>
+                <ol>
+                    <li>Humility allows you to suck at something enough to ask for help. Find a person to admire and behavior-clone from.</li>
+                    <li>Humility also allows you to know that it's okay if you suck at it for A WHILE.</li>
+                </ol>
+                <p>
+                    That second part is particularly important because your short-term expectations for improvement need to be dampened so that you are not massively disappointed by an initial lack of progress.
+                </p>
+                <p>
+                    So I implemented these two things by heading to practice three evenings a week for a year and forcing Julien to play after practice occasionally. I learned a proper Western grip and found my stride.
+                </p>
+                <p>
+                    And you know what happened?! I got good at recognizing I was bad for a few months, then got better, then suddenly started winning some points in games. Soon enough, I was helping others in tennis.
+                </p>
+
+                <figure class="learning-chart">
+                    <div class="chart-legend" aria-hidden="true">
+                        <span>expected progress</span>
+                        <span class="actual-key">actual progress</span>
+                    </div>
+                    <svg viewBox="0 0 640 350" role="img" aria-labelledby="learning-title learning-description">
+                        <title id="learning-title">Improvement is not a straight line</title>
+                        <desc id="learning-description">An illustrative graph of skill over time spent practicing. A dashed line shows steady expected improvement. A solid line shows a long early plateau, small gains and setbacks, a sudden breakthrough, another plateau, and a later jump upward.</desc>
+                        <g aria-hidden="true">
+                            <path class="chart-grid" d="M60 210 H612 M60 130 H612 M60 50 H612"></path>
+                            <path class="chart-axis" d="M60 30 V290 H612"></path>
+                            <path class="expected-progress" d="M60 280 L610 42"></path>
+                            <path class="actual-progress" d="M60 280 L88 277 L108 282 L128 273 L155 274 L175 269 L192 275 L210 267 L230 266 L248 253 L270 247 L286 254 L304 240 L322 240 L341 238 L355 241 L372 233 L390 189 L408 153 L430 144 L448 151 L466 144 L484 146 L500 132 L518 126 L536 135 L554 119 L572 77 L590 53 L610 48"></path>
+                            <text class="chart-label" x="60" y="20">skill</text>
+                            <text class="chart-label" x="336" y="334" text-anchor="middle">consistent practice over time</text>
+                            <text class="chart-annotation" x="170" y="216" text-anchor="middle">still showing up</text>
+                            <text class="chart-annotation" x="440" y="102" text-anchor="middle">it clicks!</text>
+                        </g>
+                    </svg>
+                    <figcaption>A sketch of learning: plateaus, setbacks, and sudden breakthroughs.</figcaption>
+                </figure>
+
+                <h2>Universal Teachings of Learning</h2>
+                <p>
+                    How I learned tennis carried over into almost every skill I've picked up since. Rather than believing that my classmate who had been coding since eight years old was inherently better, I remembered tennis theory and believed I could become a strong programmer with diligence and concentrated effort. When I started working on marketing on TikTok, I reminded myself that the awkward and unrewarding weeks of work would eventually hit a spike like what I felt in tennis. Moreover, I found mentors or accounts I liked to learn strategies and habits from.
+                </p>
+                <p>
+                    I think tennis theory reminds me that learning is an awkward and nonlinear process. The formula for learning is simple: humble fixation and mentorship.
+                </p>
+                <p>
+                    My friends occasionally glaze me for the random skills I have acquired in the last four years (cooking, marketing, programming, machine learning, research, phonology, and tennis), but I think it largely comes down to tennis theory.
+                </p>
+
+                <p class="closing-note">
+                    A universal science to learning.
+                </p>
+                <p class="acknowledgment">
+                    <em>Also, special thanks to Vedang and Amogh for inspiring this blog dump over a conversation about my random side quests in learning.</em>
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>
