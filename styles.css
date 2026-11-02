@@ -1072,6 +1072,17 @@ main {
     opacity: 0.92;
 }
 
+.reading-award {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
 .reading-note .note-label {
     font-family: 'Caveat', cursive;
     font-size: 1.05rem;
